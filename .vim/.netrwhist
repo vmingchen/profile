@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/media/Documents/Programming/algo/poj/1724'
+let g:netrw_dirhist_2='/media/Documents/Programming/algo/poj'
+let g:netrw_dirhist_3='/media/Documents/Programming/cpp/stl/src'
+let g:netrw_dirhist_4='/media'
+let g:netrw_dirhist_5='/media/Documents'
+let g:netrw_dirhist_6='/media/Documents/Research'
+let g:netrw_dirhist_7='/media/Documents/Research/nlp'
+let g:netrw_dirhist_8='/media/Documents/Research/nlp/corpus'
+let g:netrw_dirhist_9='/media/Documents/Research/nlp/corpus/raw'
