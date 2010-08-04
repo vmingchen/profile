@@ -78,11 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -123,24 +118,58 @@ function extract ()
     fi
 }
 
+# default mode
+umask 002
+
 # alias
 alias nau='nautilus'
 alias l='ls -hls'      # show detailed info
-alias la='ls -Al'       # show hidden files
-alias lc='ls -ltcr'     # sort by change time
-alias lb='ls -lSr'      # sort by size
-alias lx='ls -lXB'      # sort by extension
-alias lr='ls -lR'       # recursive ls
-
-# cd
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias .....='cd ../../../..'
+
+alias h='history'
+alias p='ps -ef'
+
 alias f='pushd'
 alias b='popd'
+alias d='dirs -v'
 
-# names
+# functions
+function gcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function calc () { awk "BEGIN {print \"The answer is: \" $* }"; }
+#function calc () { awk -v eqn="$*" 'BEGIN {printf("The answer is: %f\n", eqn) }'; }
+function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
+function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
+function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
+function max() { if [ $# -eq 0 ]; then mx; else echo "$@" | tr ' ' '\n' | mx; fi }
+function min() { if [ $# -eq 0 ]; then mn; else echo "$@" | tr ' ' '\n' | mn; fi }
+function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi }
+
+# chr() - converts decimal value to its ASCII character representation
+# ord() - converts ASCII character to its decimal value
+function chr() { printf \\$(printf '%03o' $1); }
+function ord() { printf '%d' "'$1"; }
+# faster version as it avoids a subshell
+# function chr () { printf \\$(($1/64*100+$1%64/8*10+$1%8)); } 
+
+# hex() - converts ASCII character to a hexadecimal value
+# unhex() - converts a hexadecimal value to an ASCII character
+function hex() { printf '%x' "'$1"; }
+function unhex() { printf \\x"$1"; }
+
+# options
+set -o emacs
+set -o nounset 
+shopt -s extglob
+shopt -s cdable_vars
+
+
+#######################################################
+# options and properties at chm-laptop@home
+#######################################################
+
+# names 
 poj=/media/Documents/Programming/algo/poj/
 stl=/media/Documents/Programming/cpp/stl/
 coq=/media/Documents/Research/language
@@ -150,10 +179,6 @@ doc=/media/Documents/Document
 eng=/media/Documents/English/notes
 nlp=/media/Documents/Research/nlp
 
-# options
-set -u  # do not expand undefined variable to null, report error instead
-shopt -s cdable_vars
-shopt -s extglob
 
 # path
 PATH=$PATH:~/hadoop/bin

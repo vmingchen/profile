@@ -1,31 +1,35 @@
-" Scheme
-colorscheme desert
-
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" scheme, other cool colorscheme: wombat
+colorscheme desert
+
+" enable plugins
+syntax on
 filetype on
 filetype plugin on
+filetype plugin indent on
 
-"Turn backup off
+" turn backup off
 set nobackup
 set nowb
 set dir=~/tmp  " swap file directory
 
-" Font
+" font
 set gfn=Monospace\ 10
 
 " tab map
 map <M-Right> :tabnext<CR>
 map <M-Left> :tabprev<CR>
 
-" Hide the toolbar
+" set GUI
 set guioptions-=T
-
+set laststatus=2
+set statusline=%F%m%r%h%w\ [%n]\ [%{&ff}]%=\ dec:%b\ hex:%B\ [%l,%v][%p%%] 
 " Maximize the window
 " au GUIEnter * simalt ~x
 
-" Show line number
+" show line number
 set number
 
 "No sound on errors.
@@ -34,6 +38,7 @@ set novisualbell
 
 "Ignore case when searching
 set ignorecase
+set smartcase
 set incsearch
 set hlsearch
 set magic " enable wildcard
@@ -42,9 +47,7 @@ set magic " enable wildcard
 set cul
 
 " Folding
-" enable folding, I find it very useful
 set foldenable
-set foldmethod=syntax
 set shiftwidth=4
 
 " Ctrl X, Ctrl V, Ctrl Y, Ctrl S
@@ -57,21 +60,23 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 " Map Y to do the same (well, almost) as the D command
 map Y y$
 
-" Switch to current dir
+" set <Leader>
 let mapleader = ","
+
+" Switch to current dir
 map <leader>cd :cd %:p:h<cr>
+
+" Lookup in manual
+map <leader>m :!man 
+
+" Open a buffer as scratch board
+map <leader>q :tabe ~/buffer<CR>
 
 " Open history window
 map <leader>h :<C-F>
 
-" Choose buffer window
+" List and choose buffer window
 map <leader>b :ls<cr>:b 
-
-" Open man
-map <leader>m :!man 
-
-" Open a dummy buffer for paste
-map <leader>q :tabe ~/buffer<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -84,6 +89,7 @@ map <leader>t2 :set shiftwidth=2<cr>
 map <leader>t4 :set shiftwidth=4<cr>
 au FileType tex,html,python,vim,javascript setl shiftwidth=2
 au FileType tex,html,python,vim,javascript setl tabstop=2
+au FileType c,cpp,h,java,sh,tex,html,python,ml setl foldmethod=syntax
 au FileType ml,java setl shiftwidth=4
 au FileType ml,java setl tabstop=4
 
@@ -105,6 +111,9 @@ set cindent
 
 "Wrap lines
 set wrap
+
+" function key
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
