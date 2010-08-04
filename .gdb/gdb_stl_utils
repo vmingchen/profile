@@ -1,0 +1,221 @@
+#
+# GDB stl functions, a set of scripts to help debugging STL
+# Copyright (C) 2000 Gilad Mishne
+# Modified (2005) by Antal Novak
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#
+
+add-symbol-file ~/.gdb/StlStdContainers.o
+
+####################
+# vector functions #
+####################
+
+define p_stl_vector_size
+  set $vec = ($arg0)
+  set $vec_size = $vec->_M_finish - $vec->_M_start
+  printf "Vector Size: %d\n", $vec_size
+end
+
+define p_stl_vector
+  set $vec = ($arg0)
+  set $vec_size = $vec->_M_finish - $vec->_M_start
+  if ($vec_size != 0)
+    set $i = 0
+    while ($i < $vec_size)
+      printf "Vector Element %d:  ", $i
+      p *($vec->_M_start+$i)
+      set $i++
+    end
+  end
+end
+
+
+##########################################################################
+# list functions                                                         #
+# provides generic pointers that need to be cast back to the type        #
+##########################################################################
+
+define p_stl_list_size
+  set $list = ($arg0)
+  set $list_size = 0
+  set $firstNode = $list->_M_node
+  set $curNode = $list->_M_node->_M_next
+  while ($curNode != $firstNode)
+	 set $curNode = ($curNode)->_M_next
+    set $list_size++
+  end
+  printf "List Size: %d\n", $list_size
+end
+
+define p_stl_list
+  set $list = ($arg0)
+  set $list_size = 0
+  set $firstNode = $list->_M_node
+  set $curNode = $list->_M_node->_M_next
+  while ($curNode != $firstNode)
+    printf "List Element %d: ", $list_size
+    p ((_List_node *) $curNode)->_M_data
+	 set $curNode = ($curNode)->_M_next
+    set $list_size++
+  end
+end
+
+
+####################
+# tree   functions #
+####################
+
+define p_stl_tree_size
+  set $tree = ($arg0)
+  set $tree_size = $tree->_M_t->_M_node_count
+  printf "Tree Size: %d\n", $tree_size
+end
+
+define p_stl_tree
+  set $tree = ($arg0)
+  set $i = 0
+  set $node = $tree->_M_t->_M_header->_M_left
+  set $end = $tree->_M_t->_M_header
+  while ($node != $end)
+    set $i++
+    printf "Node %d: ", $i
+    set $value = ((_Rb_tree_node *) $node)->_M_value_field
+    p $value
+    if ($node->_M_right != 0) 
+      set $node = $node->_M_right
+        while ($node->_M_left != 0)
+          set $node = $node->_M_left
+        end
+    else 
+      set $tmp_node = $node->_M_parent
+        while ($node == $tmp_node->_M_right) 
+          set $node = $tmp_node
+          set $tmp_node = $tmp_node->_M_parent
+        end
+        if ($node->_M_right != $tmp_node)
+          set $node = $tmp_node
+        end
+    end
+  end
+end
+
+define p_map_lookup
+  set $tree = ($arg0)
+  set $idx  = ($arg1)
+
+  set $i = 0
+  set $node = $tree->_M_t->_M_header->_M_left
+  set $end = $tree->_M_t->_M_header
+  while ($node != $end)
+    set $i++
+    set $value = ((_Rb_tree_node *) $node)->_M_value_field
+
+    if ($value->first == $idx)
+      printf "Node %d: ", $i
+      p $value
+    end
+
+    if ($node->_M_right != 0) 
+      set $node = $node->_M_right
+        while ($node->_M_left != 0)
+          set $node = $node->_M_left
+        end
+    else 
+      set $tmp_node = $node->_M_parent
+        while ($node == $tmp_node->_M_right) 
+          set $node = $tmp_node
+          set $tmp_node = $tmp_node->_M_parent
+        end
+        if ($node->_M_right != $tmp_node)
+          set $node = $tmp_node
+        end
+    end
+  end
+end
+
+####################
+# hash   functions #
+####################
+
+define p_stl_hash_size
+  set $hash = ($arg0)
+  set $table = $hash->_M_ht
+  set $table_size = $table->_M_num_elements
+  set $num_buckets = $table->_M_buckets->_M_finish - $table->_M_buckets->_M_start
+  printf "Table Size: %d  (in %d buckets)\n", $table_size, $num_buckets
+end
+
+define p_stl_hash
+  set $i = 0
+  set $hash = ($arg0)
+  set $table = $hash->_M_ht
+  set $table_size = $table->_M_num_elements
+  set $cur_bucket = 0
+
+  set $num_buckets = $table->_M_buckets->_M_finish - $table->_M_buckets->_M_start
+  while ($cur_bucket < $num_buckets && $i < $table_size)
+    if (*($table->_M_buckets->_M_start + $cur_bucket) != 0)
+      printf "Bucket %d:\n--------\n", $cur_bucket
+      set $cur_node = *($table->_M_buckets->_M_start + $cur_bucket)
+      while ($cur_node != 0)
+        set $cur_val = (void*)(&((_Hashtable_node<void *> *)$cur_node)->_M_val)
+        set $cur_node = ((_Hashtable_node<void *> *)$cur_node)->_M_next
+        p $cur_val
+        set $i++
+      end
+      printf "\n"
+    end
+    set $cur_bucket++
+  end
+end
+
+
+#####################################
+# Documentation for online gdb help #
+#####################################
+
+document p_stl_list_size
+p_stl_list_size <list>: Print size of stl list
+end
+document p_stl_list
+p_stl_list <list>: Print contents of stl list as (void*) pointers. Cast back to actual template type to see the values.
+end
+
+document p_stl_vector_size
+p_stl_vector_size <vector>: Print size of stl vector
+end
+document p_stl_vector
+p_stl_vector <vector>: Print contents of stl vector as (void*) pointers. Cast back to actual template type to see the values.
+end
+
+document p_stl_tree_size
+p_stl_tree_size <set/map>: Print size of stl trees (sets and maps)
+end
+document p_stl_tree
+p_stl_tree <set/map>: Print contents of stl trees as (void*) pointers. 
+For sets, cast back to actual template type to see the values.
+For maps, cast back to (pair<Key,Val>*) to see the values.
+end
+
+document p_stl_hash_size
+p_stl_hash_size <set/map>: Print size of stl hashs (sets and maps)
+end
+document p_stl_hash
+p_stl_hash <set/map>: Print contents of stl hashs as (void*) pointers. 
+For sets, cast back to actual template type to see the values.
+For maps, cast back to (pair<Key,Val>*) to see the values.
+end
