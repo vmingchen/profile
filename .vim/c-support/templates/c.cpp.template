@@ -52,8 +52,7 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 << uppercase <CURSOR>
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.method-implementation ==
-void<CURSOR>
-|?CLASSNAME|::|?METHODNAME| ( <+argument list+> )
+void<CURSOR> |?CLASSNAME|::|?METHODNAME| ( <+argument list+> )
 {
 	return ;
 }		/* -----  end of method |CLASSNAME|::|?METHODNAME|  ----- */
@@ -66,8 +65,7 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  *      Method:  get_|?ATTRIBUTE|
  *--------------------------------------------------------------------------------------
  */
-inline int<CURSOR>
-|CLASSNAME|::get_|ATTRIBUTE| (  )
+inline int<CURSOR> |CLASSNAME|::get_|ATTRIBUTE| (  )
 {
 	return |ATTRIBUTE|;
 }		/* -----  end of method |CLASSNAME|::get_|ATTRIBUTE|  ----- */
@@ -78,8 +76,7 @@ inline int<CURSOR>
  *      Method:  set_|ATTRIBUTE|
  *--------------------------------------------------------------------------------------
  */
-inline void
-|CLASSNAME|::set_|ATTRIBUTE| ( <+argument list+> )
+inline void |CLASSNAME|::set_|ATTRIBUTE| ( <+argument list+> )
 {
 	|ATTRIBUTE|	= value;
 	return ;

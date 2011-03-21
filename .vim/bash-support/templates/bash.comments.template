@@ -35,7 +35,11 @@
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
+set -o nounset                          # Treat unset variables as an error
+set -o errexit                          # Stop script if command fail
+IFS=$' \t\n'                            # Reset IFS
+unset -f unalias                        # Make sure unalias is not a function
+\unalias -a                             # Unset all aliases
 
 §%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == comment.keyword-bug == append ==

@@ -83,19 +83,24 @@ map <leader>b :ls<cr>:b
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab
+set tabstop=4 
 set shiftwidth=4
+set softtabstop=4
 
 map <leader>t2 :set shiftwidth=2<cr>
 map <leader>t4 :set shiftwidth=4<cr>
-au FileType tex,html,python,vim,javascript setl shiftwidth=2
-au FileType tex,html,python,vim,javascript setl tabstop=2
+
 au FileType c,cpp,h,java,sh,tex,html,python,ml setl foldmethod=syntax
-au FileType ml,java setl shiftwidth=4
-au FileType ml,java setl tabstop=4
+au FileType tex setl shiftwidth=2
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" au FileType tex,html,python,vim,javascript setl tabstop=2
+" au FileType ml,java setl shiftwidth=4
+" au FileType ml,java setl tabstop=4
 
 set smarttab
 set lbr
-set tw=500
+set textwidth=100
 
 """"""""""""""""""""""""""""""
 " Indent
