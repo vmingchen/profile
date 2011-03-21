@@ -23,18 +23,16 @@ IFS=$' \t\n'                            # Reset IFS
 unset -f unalias                        # Make sure unalias is not a function
 \unalias -a                             # Unset all aliases
 
-home=~
-prof="$home/profile"
+prof="$HOME/profile"
 
-function link_files ()
+function link_files()
 {
 	for i in "$@"; do
-		if [ -e "$home/$i" ]; then
-			mv "$home/$i" "$home/$i.bak"
+		if [ -e "$HOME/$i" ]; then
+			mv "$HOME/$i" "$HOME/$i.bak"
 		fi
-		ln -s "$prof/$i" "$home/$i"
+		ln -s "$prof/$i" "$HOME/$i"
 	done
 }
 
-link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit
-
+link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc

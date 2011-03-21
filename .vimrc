@@ -78,6 +78,15 @@ map <leader>h :<C-F>
 " List and choose buffer window
 map <leader>b :ls<cr>:b 
 
+" make current window the only window
+map <leader>o :only<cr>
+
+" open Taglist window
+map <leader>c :Tlist<cr>
+
+" open NERDTree window
+map <leader>t :NERDTree .<cr>
+map <leader>g :NERDTree 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
@@ -100,7 +109,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 set smarttab
 set lbr
-set textwidth=100
+set tw=80
 
 """"""""""""""""""""""""""""""
 " Indent
