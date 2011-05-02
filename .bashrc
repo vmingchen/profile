@@ -94,6 +94,7 @@ shopt -s histappend
 umask 002
 
 # mkdir and cd 
+function calc () { awk "BEGIN {print $* }"; }
 function gcd () { mkdir -p "$@" && eval cd "\"\$$#\"";}
 function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
 function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
@@ -164,9 +165,12 @@ alias e='exit'
 alias j='jobs'
 alias n="vim ~/notes/`date +%y%m%d`.mkd"
 
-alias python='python26'
+if type python26 >/dev/null 2>&1; then
+    alias python='python26'
+fi
 alias gdb='libtool --mode=execute gdb'
 alias pdb='python -m pdb'
+alias ymd='date +%y%m%d'
 
 # names
 poj=/media/Documents/Programming/algo/poj/
@@ -195,3 +199,4 @@ alias smth='luit -encoding GBK telnet bbs.newsmth.net'
 alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
 alias g3='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.3'
 alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
+alias ggg='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.12.139.171'

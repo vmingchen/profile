@@ -1,0 +1,12 @@
+[user]
+	name = brianchenming
+	email = brianchenming@gmail.com
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+[color]
+	ui = auto
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff

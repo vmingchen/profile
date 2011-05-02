@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/chm/profile/.vim/bash-support'
 let g:netrw_dirhist_2='/home/chm/profile/.vim/bash-support/templates'
 let g:netrw_dirhist_3='/home/chm/profile/.vim/c-support/templates'
+let g:netrw_dirhist_4='/home/chm/stardict-3.0.1/stardict-plugins/stardict-wordnet-plugin'
+let g:netrw_dirhist_5='/home/chm/notes'
