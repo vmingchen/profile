@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -40,10 +43,10 @@ fi
 if [ "${color_prompt:=}" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-  #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\$'
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
+PS1='\$'
 
 # If this is an xterm set the title to user@host:dir
 case "${TERM:=}" in
@@ -73,9 +76,9 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -138,7 +141,7 @@ function sel() {
     done
     cmdexpr="$cmdexpr -e '${lastline}q'"
     eval "cat -n $target | sed $cmdexpr"
-}      
+}
 
 # alias
 alias grep="grep $COLOR"
@@ -171,6 +174,7 @@ fi
 alias gdb='libtool --mode=execute gdb'
 alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
+alias smth='luit -encoding gbk telnet bbs.newsmth.net'
 
 # names
 poj=/media/Documents/Programming/algo/poj/
@@ -188,15 +192,16 @@ shopt -s cdable_vars
 shopt -s extglob
 
 # path
-PATH=$PATH:~/hadoop/bin
+PATH=$PATH:~/hadoop/bin:/home/chm/software/apache-maven-3.0.2/bin
+JAVA_PATH=/usr/lib/jvm/java-6-sun
 
 # hadoop
 export HADOOP_CONF_DIR=/home/chm/hadoop/conf
 export HADOOP_HOME=/home/chm/hadoop
 
-# connections
-alias smth='luit -encoding GBK telnet bbs.newsmth.net'
-alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
+alias g42='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.42'
 alias g3='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.3'
+alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
 alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
 alias ggg='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.12.139.171'
+alias scp='scp -o GSSAPIAuthentication=no'

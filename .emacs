@@ -22,3 +22,5 @@
 (setq gdb-many-windows t)
 
 (global-font-lock-mode t)
+
+(put 'upcase-region 'disabled nil)
