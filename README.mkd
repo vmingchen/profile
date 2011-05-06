@@ -1,0 +1,8 @@
+About
+====
+Personal dot files
+brianchenming@gmail.com
+
+Content
+====
+bash vim gdb emacs

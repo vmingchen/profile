@@ -11,7 +11,7 @@
 #  REQUIREMENTS:  ---
 #          BUGS:  ---
 #         NOTES:  ---
-#        AUTHOR: Ming Chen (chenming), chenming@sohu-rd.com
+#        AUTHOR: Ming Chen (chenming), brianchenming@gmail.com
 #       COMPANY: imeresearch@sogou
 #       CREATED: 07/20/2010 10:30:23 AM CST
 #      REVISION:  ---
@@ -35,4 +35,4 @@ function link_files()
 	done
 }
 
-link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc
+link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .git .gitconfig

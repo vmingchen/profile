@@ -202,14 +202,9 @@ export HADOOP_HOME=/home/chm/hadoop
 alias g42='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.42'
 alias g3='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.3'
 alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
-<<<<<<< HEAD
 #alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
 alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no chenming@10.12.139.171'
 alias gdd='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.76'
-=======
-alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
-alias ggg='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.12.139.171'
->>>>>>> 7edd4d16ca208bd3f42c1bda8cf98dce0f5a11a2
 alias scp='scp -o GSSAPIAuthentication=no'
 
 # settings
