@@ -101,12 +101,9 @@ map <leader>t4 :set shiftwidth=4<cr>
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType tex setl shiftwidth=2
+autocmd FileType tex setl tabstop=2
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python setl foldmethod=indent
-
-" au FileType tex,html,python,vim,javascript setl tabstop=2
-" au FileType ml,java setl shiftwidth=4
-" au FileType ml,java setl tabstop=4
 
 set smarttab
 set lbr
