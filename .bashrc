@@ -97,6 +97,7 @@ shopt -s histappend
 umask 002
 
 # mkdir and cd 
+function calc () { awk "BEGIN {print $* }"; }
 function gcd () { mkdir -p "$@" && eval cd "\"\$$#\"";}
 function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
 function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
@@ -198,5 +199,10 @@ export HADOOP_HOME=/home/chm/hadoop
 alias g42='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.42'
 alias g3='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.3'
 alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
-alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
+#alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
+alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no chenming@10.12.139.171'
+alias gdd='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.76'
 alias scp='scp -o GSSAPIAuthentication=no'
+
+# settings
+export SVN_EDITOR=vim

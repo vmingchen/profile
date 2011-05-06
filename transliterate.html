@@ -8,8 +8,9 @@
 
     google.load("language", "1");
 
+
     function initialize() {
-      google.language.transliterate(["nihao"], "en", "cn", function(result) {
+      google.language.transliterate(["nihao"], "en", "zh", function(result) {
         if (!result.error) {
           var container = document.getElementById("transliteration");
           if (result.transliterations && result.transliterations.length > 0 &&
