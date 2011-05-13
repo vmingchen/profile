@@ -143,6 +143,10 @@ function sel() {
     eval "cat -n $target | sed $cmdexpr"
 }
 
+function opennote() {
+    vim ~/notes/`date +%y%m%d`.mkd
+}
+
 # alias
 alias grep="grep $COLOR"
 alias nau='nautilus'
@@ -166,7 +170,7 @@ alias s='screen'
 alias r='screen -D -R'
 alias e='exit'
 alias j='jobs'
-alias n="vim ~/notes/`date +%y%m%d`.mkd"
+alias n="opennote"
 
 if type python26 >/dev/null 2>&1; then
     alias python='python26'

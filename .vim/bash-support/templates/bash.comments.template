@@ -27,7 +27,6 @@
 # 
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
-#          BUGS:  ---
 #         NOTES:  ---
 #        AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
 #       COMPANY: |COMPANY|
@@ -37,9 +36,12 @@
 
 set -o nounset                          # Treat unset variables as an error
 set -o errexit                          # Stop script if command fail
+export PATH="/bin:/usr/bin:$HOME/bin"             
 IFS=$' \t\n'                            # Reset IFS
 unset -f unalias                        # Make sure unalias is not a function
 \unalias -a                             # Unset all aliases
+ulimit -H -c 0 --                       # disable core dump
+hash -r                                 # Clear the command path hash
 
 §%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == comment.keyword-bug == append ==
