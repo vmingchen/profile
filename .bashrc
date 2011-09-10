@@ -196,7 +196,7 @@ shopt -s cdable_vars
 shopt -s extglob
 
 # path
-PATH=$PATH:~/hadoop/bin:/home/chm/software/apache-maven-3.0.2/bin
+export PATH=$PATH:~/.cabal/bin/
 JAVA_PATH=/usr/lib/jvm/java-6-sun
 
 # hadoop
@@ -207,9 +207,14 @@ alias g42='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.42'
 alias g3='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.3'
 alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
 #alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
-alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no chenming@10.12.139.171'
+alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no chenming@10.11.203.218'
 alias gdd='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.76'
 alias scp='scp -o GSSAPIAuthentication=no'
 
 # settings
 export SVN_EDITOR=vim
+
+# fix iBus issues on start
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus

@@ -158,3 +158,26 @@ vnoremap <silent> # :<C-U>
   \gvy?<C-R><C-R>=substitute(
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+"au FileType markdown syn region myMkdHeaderFold
+        "\ start="\v^\z(\#{1,6})"
+        "\ skip="\v(\n\z1\#)\@="
+        "\ end="\v\n(\#)\@="ms=s-1,me=s-1
+        "\ fold contains=myMkdHeaderFold
+"au FileType markdown syn sync fromstart
+
+function MkdFoldLevel(lineNo)
+    let thisline = getline(a:lineNo)
+    if ( thisline =~ '^#.*' )
+        let level = 0
+        while strpart(thisline, level, 1) == '#'
+            let level += 1
+        endwhile
+        let result = ">" . string(level)
+        return result
+    else
+        return "="
+    endif
+endfunction
+au FileType markdown set foldmethod=expr
+au FileType markdown set foldexpr=MkdFoldLevel(v:lnum)

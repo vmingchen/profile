@@ -36,22 +36,22 @@ syntax case ignore
 syntax sync linebreaks=1
 
 " Additions to HTML groups
-syntax region htmlBold    start=/\\\@<!\(^\|\A\)\@=\*\@<!\*\*\*\@!\S/  end=/\S\\\@<!\*\@<!\*\*\*\@!\($\|\A\)\@=/  contains=htmlItalic,@Spell
+syntax region htmlBold    start=/\\\@<!\(^\|\A\)\@=\*\@<!\*\*\*\@!\S/  end=/\S\\\@<!\*\@<!\*\*\*\@!\($\|\A\)\@=/  contains=htmlItalic,@Spell 
 
 
-syntax region htmlItalic  start=/\\\@<!\(^\|\A\)\@=\*\@<!\*\*\@!\S/    end=/\S\\\@<!\*\@<!\*\*\@!\($\|\A\)\@=/    contains=htmlBold,@Spell
-syntax region htmlItalic  start=/\\\@<!\(^\|\A\)\@=\<_\@<!___\@!\S/      end=/\S\\\@<!_\@<!___\@!\($\|\A\)\@=/       contains=htmlBold,@Spell
-syntax region htmlItalic  start=/\\\@<!\(^\|\A\)\@=\<_\@<!__\@!\S/       end=/\S\\\@<!_\@<!__\@!\($\|\A\)\@=/       contains=htmlBold,@Spell
+syntax region htmlItalic  start=/\\\@<!\(^\|\A\)\@=\*\@<!\*\*\@!\S/    end=/\S\\\@<!\*\@<!\*\*\@!\($\|\A\)\@=/    contains=htmlBold,@Spell 
+syntax region htmlItalic  start=/\\\@<!\(^\|\A\)\@=\<_\@<!___\@!\S/      end=/\S\\\@<!_\@<!___\@!\($\|\A\)\@=/       contains=htmlBold,@Spell 
+syntax region htmlItalic  start=/\\\@<!\(^\|\A\)\@=\<_\@<!__\@!\S/       end=/\S\\\@<!_\@<!__\@!\($\|\A\)\@=/       contains=htmlBold,@Spell 
 
 " [link](URL) | [link][id] | [link][]
-syntax region mkdLink matchgroup=mkdDelimiter start="\!\?\["  end="\]\ze\s*[[(]" contains=@Spell nextgroup=mkdURL,mkdID skipwhite
+syntax region mkdLink matchgroup=mkdDelimiter start="\!\?\["  end="\]\ze\s*[[(]" contains=@Spell nextgroup=mkdURL,mkdID skipwhite 
 syntax region mkdID   matchgroup=mkdDelimiter start="\["      end="\]" contained
 syntax region mkdURL  matchgroup=mkdDelimiter start="("       end=")"  contained
 
 " Link definitions: [id]: URL (Optional Title)
 " TODO handle automatic links without colliding with htmlTag (<URL>)
-syntax region mkdLinkDef matchgroup=mkdDelimiter   start="^ \{,3}\zs\[" end="]:" oneline nextgroup=mkdLinkDefTarget skipwhite
-syntax region mkdLinkDefTarget start="<\?\zs\S" excludenl end="\ze[>[:space:]\n]"   contained nextgroup=mkdLinkTitle,mkdLinkDef skipwhite skipnl oneline
+syntax region mkdLinkDef matchgroup=mkdDelimiter   start="^ \{,3}\zs\[" end="]:" oneline nextgroup=mkdLinkDefTarget skipwhite 
+syntax region mkdLinkDefTarget start="<\?\zs\S" excludenl end="\ze[>[:space:]\n]"   contained nextgroup=mkdLinkTitle,mkdLinkDef skipwhite skipnl oneline 
 syntax region mkdLinkTitle matchgroup=mkdDelimiter start=+"+     end=+"+  contained
 syntax region mkdLinkTitle matchgroup=mkdDelimiter start=+'+     end=+'+  contained
 syntax region mkdLinkTitle matchgroup=mkdDelimiter start=+(+     end=+)+  contained
@@ -69,21 +69,28 @@ syntax match  mkdListItem  /^\s*\d\+\.\s\+.*\n\(\(^.\+\n\)*\n\?\)\(\(^\(\s\{4}\|
 syntax match  mkdBlockCode  /^\s*\n\(^\(\s\{4}\|\t\).*\n\)\+/
 syntax match  mkdListCode   /^\s*\n\(^\(\s\{8}\|\t{2}\).*\n\)\+/
 syntax match  mkdLineBreak /  \+$/
-syntax region mkdCode       start=/\\\@<!`/     end=/\\\@<!`/
-syntax region mkdCode       start=/\s*``[^`]*/  end=/[^`]*``\s*/
-syntax region mkdBlockquote start=/^\s*>/       end=/$/           contains=mkdLineBreak,mkdLineContinue,@Spell
-syntax region mkdCode       start="<pre[^>]*>"  end="</pre>"
-syntax region mkdCode       start="<code[^>]*>" end="</code>"
+syntax region mkdCode       start=/\\\@<!`/     end=/\\\@<!`/ 
+syntax region mkdCode       start=/\s*``[^`]*/  end=/[^`]*``\s*/ 
+syntax region mkdBlockquote start=/^\s*>/       end=/$/           contains=mkdLineBreak,mkdLineContinue,@Spell 
+syntax region mkdCode       start="<pre[^>]*>"  end="</pre>" 
+syntax region mkdCode       start="<code[^>]*>" end="</code>" 
 
 " HTML headings
-syntax region htmlH1       start="^\s*#"                   end="\($\|#\+\)" contains=@Spell
-syntax region htmlH2       start="^\s*##"                  end="\($\|#\+\)" contains=@Spell
-syntax region htmlH3       start="^\s*###"                 end="\($\|#\+\)" contains=@Spell
-syntax region htmlH4       start="^\s*####"                end="\($\|#\+\)" contains=@Spell
-syntax region htmlH5       start="^\s*#####"               end="\($\|#\+\)" contains=@Spell
-syntax region htmlH6       start="^\s*######"              end="\($\|#\+\)" contains=@Spell
+syntax region htmlH1       start="^\s*#"                   end="\($\|#\+\)" contains=@Spell 
+syntax region htmlH2       start="^\s*##"                  end="\($\|#\+\)" contains=@Spell 
+syntax region htmlH3       start="^\s*###"                 end="\($\|#\+\)" contains=@Spell  
+syntax region htmlH4       start="^\s*####"                end="\($\|#\+\)" contains=@Spell  
+syntax region htmlH5       start="^\s*#####"               end="\($\|#\+\)" contains=@Spell  
+syntax region htmlH6       start="^\s*######"              end="\($\|#\+\)" contains=@Spell  
 syntax match  htmlH1       /^.\+\n=\+$/ contains=@Spell
 syntax match  htmlH2       /^.\+\n-\+$/ contains=@Spell
+
+"syntax region mkdHeaderFold
+        "\ start="\v^\z(\#{1,6})"
+        "\ skip="\v(\n\z1\#)\@="
+        "\ end="\v\n(\#)\@="ms=s-1,me=s-1
+        "\ fold contains=htmlH.*
+"au FileType markdown syn sync fromstart
 
 "highlighting for Markdown groups
 HtmlHiLink mkdString        String
