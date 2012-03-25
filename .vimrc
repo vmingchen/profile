@@ -78,6 +78,9 @@ map <leader>h :<C-F>
 " List and choose buffer window
 map <leader>b :ls<cr>:b 
 
+" Tag
+map <leader>f :tag 
+
 " make current window the only window
 map <leader>o :only<cr>
 
