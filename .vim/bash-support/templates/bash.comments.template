@@ -26,9 +26,7 @@
 #   DESCRIPTION:  <CURSOR>
 # 
 #       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#         NOTES:  ---
-#        AUTHOR: |AUTHOR| (|AUTHORREF|), |EMAIL|
+#        AUTHOR: |AUTHOR|, |EMAIL|
 #       COMPANY: |COMPANY|
 #       CREATED: |DATE| |TIME|
 #      REVISION:  ---
@@ -36,7 +34,7 @@
 
 set -o nounset                          # Treat unset variables as an error
 set -o errexit                          # Stop script if command fail
-export PATH="/bin:/usr/bin:$HOME/bin"             
+export PATH="/bin:/usr/bin:$HOME/bin:/sbin"             
 IFS=$' \t\n'                            # Reset IFS
 unset -f unalias                        # Make sure unalias is not a function
 \unalias -a                             # Unset all aliases
