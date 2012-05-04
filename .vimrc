@@ -110,7 +110,7 @@ autocmd FileType python setl foldmethod=indent
 
 set smarttab
 set lbr
-set tw=80
+set tw=79
 
 """"""""""""""""""""""""""""""
 " Indent
@@ -121,7 +121,7 @@ set ai
 "Smart indet
 " set si
 
-"C-style indeting
+"C-style indenting
 set cindent
 
 "Wrap lines
@@ -129,6 +129,7 @@ set wrap
 
 " function key
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs

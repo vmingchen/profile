@@ -19,27 +19,22 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE:  |FILENAME|
-# 
 #         USAGE:  ./|FILENAME| 
 # 
 #   DESCRIPTION:  <CURSOR>
 # 
-#       OPTIONS:  ---
 #        AUTHOR: |AUTHOR|, |EMAIL|
-#       COMPANY: |COMPANY|
-#       CREATED: |DATE| |TIME|
-#      REVISION:  ---
+#
 #===============================================================================
 
-set -o nounset                          # Treat unset variables as an error
-set -o errexit                          # Stop script if command fail
+set -o nounset                          # treat unset variables as an error
+set -o errexit                          # stop script if command fail
 export PATH="/bin:/usr/bin:$HOME/bin:/sbin"             
-IFS=$' \t\n'                            # Reset IFS
-unset -f unalias                        # Make sure unalias is not a function
-\unalias -a                             # Unset all aliases
+IFS=$' \t\n'                            # reset IFS
+unset -f unalias                        # make sure unalias is not a function
+\unalias -a                             # unset all aliases
 ulimit -H -c 0 --                       # disable core dump
-hash -r                                 # Clear the command path hash
+hash -r                                 # clear the command path hash
 
 §%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == comment.keyword-bug == append ==
