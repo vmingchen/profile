@@ -1,18 +1,3 @@
 let g:netrw_dirhistmax  =10
-<<<<<<< HEAD
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/chm/profile/.vim/bash-support'
-let g:netrw_dirhist_2='/home/chm/profile/.vim/bash-support/templates'
-let g:netrw_dirhist_3='/home/chm/profile/.vim/c-support/templates'
-let g:netrw_dirhist_4='/home/chm/workspace/srilm'
-let g:netrw_dirhist_5='/home/chm/software/hadoop-0.20.2/lib'
-let g:netrw_dirhist_6='/home/chm/workspace/statwebpy'
-let g:netrw_dirhist_7='/home/chm/software/hadoop-0.20.2/lib'
-=======
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/chm/profile/.vim/bash-support'
-let g:netrw_dirhist_2='/home/chm/profile/.vim/bash-support/templates'
-let g:netrw_dirhist_3='/home/chm/profile/.vim/c-support/templates'
-let g:netrw_dirhist_4='/home/chm/stardict-3.0.1/stardict-plugins/stardict-wordnet-plugin'
-let g:netrw_dirhist_5='/home/chm/notes'
->>>>>>> 7edd4d16ca208bd3f42c1bda8cf98dce0f5a11a2
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/media/Documents/Course/Bioinfomatics/project/assembly/src'

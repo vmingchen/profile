@@ -69,6 +69,9 @@ map <leader>cd :cd %:p:h<cr>
 " Lookup in manual
 map <leader>m :!man 
 
+" Search tag
+map <leader>f :tag 
+
 " Open a buffer as scratch board
 map <leader>q :tabe ~/buffer<CR>
 
@@ -99,12 +102,6 @@ set softtabstop=4
 map <leader>t2 :set shiftwidth=2<cr>
 map <leader>t4 :set shiftwidth=4<cr>
 
-autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
-autocmd FileType tex setl shiftwidth=2
-autocmd FileType tex setl tabstop=2
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python setl foldmethod=indent
-
 set smarttab
 set lbr
 set tw=80
@@ -127,11 +124,17 @@ set wrap
 " function key
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
+autocmd FileType tex,html set shiftwidth=2
+autocmd FileType tex,html set tabstop=2
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setl foldmethod=indent
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "My information
-iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
