@@ -13,7 +13,6 @@ filetype plugin indent on
 " turn backup off
 set nobackup
 set nowb
-set dir=~/tmp  " swap file directory
 
 " font
 set gfn=Monospace\ 10
