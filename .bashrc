@@ -97,8 +97,8 @@ shopt -s histappend
 umask 002
 
 # mkdir and cd 
-function calc () { awk "BEGIN {print $* }"; }
-function gcd () { mkdir -p "$@" && eval cd "\"\$$#\"";}
+function calc() { awk "BEGIN {print $* }"; }
+function gcd() { mkdir -p "$@" && eval cd "\"\$$#\"";}
 function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
 function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
 function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
@@ -106,7 +106,7 @@ function max() { if [ $# -eq 0 ]; then mx; else echo "$@" | tr ' ' '\n' | mx; fi
 function min() { if [ $# -eq 0 ]; then mn; else echo "$@" | tr ' ' '\n' | mn; fi }
 function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi }
 
-function extract () 
+function extract() 
 {
     if [ -f $1 ] ; then
         case $1 in
@@ -175,7 +175,9 @@ alias n="opennote"
 if type python26 >/dev/null 2>&1; then
     alias python='python26'
 fi
-alias gdb='libtool --mode=execute gdb'
+if libtool --version >/dev/null 2>&1; then
+    alias gdb='libtool --mode=execute gdb'
+fi
 alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
@@ -191,7 +193,7 @@ eng=/media/Documents/English/notes
 nlp=/media/Documents/Research/nlp
 
 # options
-set -u  # do not expand undefined variable to null, report error instead
+#set -u  # do not expand undefined variable to null, report error instead
 shopt -s cdable_vars
 shopt -s extglob
 
@@ -218,3 +220,6 @@ export SVN_EDITOR=vim
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+
+source ~/.git-completion.bash
+export GOOGLE_TEST=/home/ming/software/gtest-1.6.0
