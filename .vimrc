@@ -13,7 +13,6 @@ filetype plugin indent on
 " turn backup off
 set nobackup
 set nowb
-set dir=~/tmp  " swap file directory
 
 " font
 set gfn=Monospace\ 10
@@ -81,6 +80,9 @@ map <leader>h :<C-F>
 " List and choose buffer window
 map <leader>b :ls<cr>:b 
 
+" Tag
+map <leader>f :tag 
+
 " make current window the only window
 map <leader>o :only<cr>
 
@@ -104,7 +106,7 @@ map <leader>t4 :set shiftwidth=4<cr>
 
 set smarttab
 set lbr
-set tw=80
+set tw=79
 
 """"""""""""""""""""""""""""""
 " Indent
@@ -115,7 +117,7 @@ set ai
 "Smart indet
 " set si
 
-"C-style indeting
+"C-style indenting
 set cindent
 
 "Wrap lines
@@ -123,6 +125,13 @@ set wrap
 
 " function key
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
+autocmd FileType tex,html set shiftwidth=2
+autocmd FileType tex,html set tabstop=2
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setl foldmethod=indent
 
 " no autoindentation
 :nnoremap <F8> :setl noai nocin nosi inde=<CR>

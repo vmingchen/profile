@@ -1,18 +1,11 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE:  link.sh
-# 
 #         USAGE:  ./link.sh 
 # 
 #   DESCRIPTION:  Link
 # 
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR: Ming Chen (chenming), brianchenming@gmail.com
-#       COMPANY: imeresearch@sogou
+#        AUTHOR: Ming Chen (chenming), v.mingchen@gmail.com
 #       CREATED: 07/20/2010 10:30:23 AM CST
 #      REVISION:  
 #               1.1, 12/05/11 11:17:34, use ls to list link files
@@ -39,5 +32,6 @@ function link_files()
 	done
 }
 
-link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .git .gitconfig
+link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .git .gitconfig \
+    .git-completion.bash
 #link_files `ls -A $prof`

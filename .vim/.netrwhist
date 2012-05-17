@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/media/Documents/Course/CSE595/papers'
 let g:netrw_dirhist_2='/media/Documents/Course/CSE595'
@@ -6,3 +7,5 @@ let g:netrw_dirhist_3='/media/Documents/Course/CSE595/software'
 let g:netrw_dirhist_4='/media/Documents/Course/CSE595/software/dm-cache'
 let g:netrw_dirhist_5='/media/Documents/Course/CSE595/software/dm-cache/3.0.8'
 let g:netrw_dirhist_6='/home/ming/cse595g3/doc/report/template'
+=======
+>>>>>>> 4ec9754763f10d64fb2084a02108c5ac44844729
