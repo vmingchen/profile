@@ -1,8 +1,12 @@
-About
-====
+# About
 Personal dot files
 brianchenming@gmail.com
 
-Content
-====
+# Content
 bash vim gdb emacs
+
+# Install
+
+    $ cd ~
+    $ git clone git://github.com/brianchenming/profile.git
+    $ ./link.sh
