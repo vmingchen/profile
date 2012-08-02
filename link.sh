@@ -32,6 +32,6 @@ function link_files()
 	done
 }
 
-link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .git .gitconfig \
+link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .gitconfig \
     .git-completion.bash
 #link_files `ls -A $prof`
