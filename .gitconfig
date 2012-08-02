@@ -10,3 +10,7 @@
 	editor = vim
 [merge]
 	tool = vimdiff
+[alias]
+	pl = log --color --pretty=format:'%h - %an, %ar : %s'
+	ll = log --pretty=oneline
+	gl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)     %C(bold blue)<%an>%Creset' --abbrev-commit --
