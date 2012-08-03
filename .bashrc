@@ -40,6 +40,8 @@ if [ -n "${force_color_prompt:=}" ]; then
     fi
 fi
 
+[ -f ~/.local_bashrc ] && source ~/.local_bashrc
+
 if [ "${color_prompt:=}" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -166,12 +168,8 @@ alias smth='luit -encoding gbk telnet bbs.newsmth.net'
 # names
 poj=/media/Documents/Programming/algo/poj/
 stl=/media/Documents/Programming/cpp/stl/
-coq=/media/Documents/Research/language
 ac=/media/Documents/Active
-wm=/media/Documents/Research/watermark
 doc=/media/Documents/Document
-eng=/media/Documents/English/notes
-nlp=/media/Documents/Research/nlp
 
 # options
 #set -u  # do not expand undefined variable to null, report error instead
