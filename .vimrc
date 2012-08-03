@@ -96,13 +96,13 @@ map <leader>g :NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab
+set noexpandtab
 set tabstop=4 
 set shiftwidth=4
 set softtabstop=4
 
-map <leader>t2 :set shiftwidth=2<cr>
-map <leader>t4 :set shiftwidth=4<cr>
+map <leader>t2 :set shiftwidth=2 tabstop=2<cr>
+map <leader>t4 :set shiftwidth=4 tabstop=4<cr>
 
 set smarttab
 set lbr
@@ -127,20 +127,16 @@ set wrap
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
-autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
-autocmd FileType tex,html set shiftwidth=2
-autocmd FileType tex,html set tabstop=2
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python setl foldmethod=indent
-
 " no autoindentation
 :nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
-autocmd FileType tex,html set shiftwidth=2
-autocmd FileType tex,html set tabstop=2
+autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
+autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
+autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|setl foldmethod=indent
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python setl foldmethod=indent
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
