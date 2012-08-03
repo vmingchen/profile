@@ -103,6 +103,7 @@ set softtabstop=4
 
 map <leader>t2 :set shiftwidth=2 tabstop=2<cr>
 map <leader>t4 :set shiftwidth=4 tabstop=4<cr>
+map <leader>t8 :set shiftwidth=8 tabstop=8<cr>
 
 set smarttab
 set lbr
@@ -126,7 +127,6 @@ set wrap
 " function key
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
-
 " no autoindentation
 :nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
@@ -135,6 +135,7 @@ autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
+autocmd FileType vim set tabstop=4|set shiftwidth=4|set noexpandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|setl foldmethod=indent
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
@@ -192,3 +193,7 @@ function MkdFoldLevel(lineNo)
 endfunction
 au FileType markdown set foldmethod=expr
 au FileType markdown set foldexpr=MkdFoldLevel(v:lnum)
+
+if filereadable(expand("~/.local_vimrc"))
+	source ~/.local_vimrc
+endif
