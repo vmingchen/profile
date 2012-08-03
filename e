@@ -5,7 +5,8 @@
 e() { 
   for F in "$@"; do
     if [ -f "$F" ] ; then 
-      FT1=$(file -bi "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
+      FT1=$(file -b --mime-type "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
+      #FT1=$(file -bi "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
       DIR="$F-e"
       mkdir "$DIR" || exit 1
       pushd "$DIR"
