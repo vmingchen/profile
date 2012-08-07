@@ -11,7 +11,7 @@
  * =====================================================================================
  */
 	int
-main ( int argc, char *argv[] )
+main(int argc, char *argv[])
 {
 	printf ("\nProgram %s\n\n", argv[0] );
 
