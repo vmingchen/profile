@@ -33,5 +33,11 @@ function link_files()
 }
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .gitconfig \
-    .git-completion.bash
+    .git-completion.bash .gitignore
 #link_files `ls -A $prof`
+
+# load machine specific settings
+domain_name=`uname -n`
+if [ -f "${domain_name}.bashrc" ]; then
+	ln -s "$prof/${domain_name}.bashrc" "$HOME/.local_bashrc"
+fi
