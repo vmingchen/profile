@@ -126,6 +126,14 @@ function sel() {
     eval "cat -n $target | sed $cmdexpr"
 }
 
+function openeps() {
+	if uname -a | grep -q Linux; then
+		evince *.eps
+	elif uname -a | grep -q Mac; then
+		open *.eps
+	fi
+}
+
 function opennote() {
     vim ~/notes/`date +%y%m%d`.mkd
 }
