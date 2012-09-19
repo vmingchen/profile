@@ -141,7 +141,7 @@ function opennote() {
 # alias
 alias grep="grep $COLOR"
 alias nau='nautilus'
-alias l="ls -hls $COLOR"      # show detailed info
+alias l="ls -hl $COLOR"      # show detailed info
 alias la="ls -Al $COLOR"       # show hidden files
 alias lt="ls -ltc $COLOR"     # sort by change time
 alias lx="ls -lXB $COLOR"      # sort by extension
