@@ -40,17 +40,15 @@ function bits2str(bits,        data, mask)
 #	1 -- B, KB, MB, GB, TB
 function m2hsize(msize, istyle)
 {
-	styles[0] = ",K,M,G,T";
-	styles[1] = "B,KB,MB,GB,TB";
-	split(styles[istyle], suffix, ",");
+	styles[0] = ":K:M:G:T";
+	styles[1] = "B:KB:MB:GB:TB";
+	split(styles[istyle], units, ":");
 	base = 1;
 	tmp = msize;
-	for (i = 0; tmp > 0; ++i) {
-		tmp = rshift(tmp, 8);
-		base = lshift(base, 8);
+	# index starts from 1
+	for (i = 1; tmp >= 1024; ++i) {
+		tmp = rshift(tmp, 10);
+		base = lshift(base, 10);
 	}
-	
-	printf("%0.0f%s", msize/base, styles[i]);
-	return sprintf("%0.0f%s", msize/base, styles[i]);
+	return sprintf("%d%s", int(msize/base), units[i]);
 }
-
