@@ -111,10 +111,12 @@ function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi
 # include extract script
 [ -f ~/profile/e ] && source ~/profile/e
 
+# Select several lines from a file. 
+# e.g., sel /etc/passwd 2 4 6
 function sel() {
-    target="$1"
-    cmdexpr="-n"
-    lastline=0
+    local target="$1"
+    local cmdexpr="-n"
+    local lastline=0
     shift
     for i in "$@"; do
         cmdexpr="$cmdexpr -e '${i}p'"
@@ -122,16 +124,21 @@ function sel() {
             lastline="$i"
         fi
     done
-    cmdexpr="$cmdexpr -e '${lastline}q'"
+    local cmdexpr="$cmdexpr -e '${lastline}q'"
     eval "cat -n $target | sed $cmdexpr"
 }
 
-function openeps() {
+function op() {
 	if uname -a | grep -q Linux; then
 		evince *.eps
 	elif uname -a | grep -q Mac; then
 		open *.eps
 	fi
+}
+
+function ref() {
+	ctags -R
+	cscope -b -R
 }
 
 function opennote() {
@@ -141,12 +148,12 @@ function opennote() {
 # alias
 alias grep="grep $COLOR"
 alias nau='nautilus'
-alias l="ls -hl $COLOR"      # show detailed info
-alias la="ls -Al $COLOR"       # show hidden files
-alias lt="ls -ltc $COLOR"     # sort by change time
-alias lx="ls -lXB $COLOR"      # sort by extension
-alias lr="ls -lR $COLOR"       # recursive ls
-alias ls="ls -lhS $COLOR"      # sort by size
+alias l="\ls -hl $COLOR"      # show detailed info
+alias la="\ls -Al $COLOR"       # show hidden files
+alias lt="\ls -ltc $COLOR"     # sort by change time
+alias lx="\ls -lXB $COLOR"      # sort by extension
+alias lr="\ls -lR $COLOR"       # recursive ls
+alias ls="\ls -lhS $COLOR"      # sort by size
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
