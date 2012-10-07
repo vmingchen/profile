@@ -221,3 +221,5 @@ export CVSROOT=mchen@cvs.fsl.cs.sunysb.edu:/scm/cvsroot/
 
 alias vm1='ssh -Y mchen@vm1.fsl.cs.sunysb.edu'
 alias dolphin='ssh mchen@dolphin.fsl.cs.sunysb.edu'
+
+export AWKPATH=$AWKPATH:~/profile/awk
