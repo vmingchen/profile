@@ -1,4 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/mchen/Downloads/wikipedia'
-let g:netrw_dirhist_2='/home/mchen/Downloads'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/ming/greendm/results/microbench-fb'
+let g:netrw_dirhist_2='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp'
+let g:netrw_dirhist_3='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp/out'
+let g:netrw_dirhist_4='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp'
+let g:netrw_dirhist_5='/home/ming/greendm/results/microbench-fb'
+let g:netrw_dirhist_6='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp'
+let g:netrw_dirhist_7='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp/out'

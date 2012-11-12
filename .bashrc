@@ -179,6 +179,7 @@ fi
 alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
+alias tree='~/profile/tree'
 
 # names
 poj=/media/Documents/Programming/algo/poj/
