@@ -83,6 +83,9 @@ map <leader>b :ls<cr>:b
 " Tag
 map <leader>f :tag 
 
+" run Makefile and open error
+map <leader>k :make \| copen<cr>
+
 " make current window the only window
 map <leader>o :only<cr>
 
