@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/mchen/Downloads/wikipedia'
-let g:netrw_dirhist_2='/home/mchen/Downloads'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/mchen/greendm/results'
+let g:netrw_dirhist_2='/home/mchen/cse306/hw1'
+let g:netrw_dirhist_3='/home/mchen/datacenter/benchmark/leveldb/results/micro'
