@@ -128,14 +128,6 @@ function sel() {
     eval "cat -n $target | sed $cmdexpr"
 }
 
-function op() {
-	if uname -a | grep -q Linux; then
-		evince *.eps
-	elif uname -a | grep -q Mac; then
-		open *.eps
-	fi
-}
-
 function ref() {
 	ctags -R
 	cscope -b -R
@@ -194,7 +186,7 @@ shopt -s cdable_vars
 shopt -s extglob
 
 # path
-export PATH=$PATH:~/.cabal/bin/
+export PATH=/home/mchen/software/bin:$PATH
 JAVA_PATH=/usr/lib/jvm/java-6-sun
 
 # hadoop

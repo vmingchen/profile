@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-<<<<<<< HEAD
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/mchen/greendm/results'
-let g:netrw_dirhist_2='/home/mchen/cse306/hw1'
-let g:netrw_dirhist_3='/home/mchen/datacenter/benchmark/leveldb/results/micro'
-=======
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/ming/greendm/results/microbench-fb'
 let g:netrw_dirhist_2='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp'
 let g:netrw_dirhist_3='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp/out'
@@ -13,4 +7,4 @@ let g:netrw_dirhist_4='/home/ming/greendm/results/microbench-fb/micro-green-1gvs
 let g:netrw_dirhist_5='/home/ming/greendm/results/microbench-fb'
 let g:netrw_dirhist_6='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp'
 let g:netrw_dirhist_7='/home/ming/greendm/results/microbench-fb/micro-green-1gvs-4kes-1mt-60wn-0sp/out'
->>>>>>> ad77cb56e494dede46a5f3bb012e63186073a75f
+let g:netrw_dirhist_8='/home/mchen/fsl/kbdb/doc/kvfs-fast13/template'
