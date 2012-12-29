@@ -1,15 +1,19 @@
 Host cross
 HostName crossroads.fsl.cs.sunysb.edu
 User mchen
+ForwardX11 yes
 
 Host dolphin
 HostName dolphin.fsl.cs.sunysb.edu
 User mchen
+ForwardX11 yes
 
 Host msl
 HostName msl.cewit.stonybrook.edu
 User mchen
+ForwardX11 yes
 
-Host chevron8
+Host chev
 User mchen
-ProxyCommand ssh msl -W %h:%p
+ProxyCommand ssh msl -W chevron8:%p
+ForwardX11 yes
