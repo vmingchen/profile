@@ -7,7 +7,10 @@ e() {
     if [ -f "$F" ] ; then 
       FT1=$(file -b --mime-type "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
       #FT1=$(file -bi "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
-      DIR="$F-e"
+      #DIR="$F-e"
+	  dirnm=`dirname $F`
+	  basnm=`basename $F`
+	  DIR="${dirnm}/${basnm%%.*}"
       mkdir "$DIR" || exit 1
       pushd "$DIR"
       case $FT1 in 
