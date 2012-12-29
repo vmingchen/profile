@@ -96,6 +96,8 @@ map <leader>c :Tlist<cr>
 map <leader>t :NERDTree .<cr>
 map <leader>g :NERDTree 
 
+map <leader>s :setlocal spell spelllang=en_us<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

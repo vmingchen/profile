@@ -1,0 +1,15 @@
+Host cross
+HostName crossroads.fsl.cs.sunysb.edu
+User mchen
+
+Host dolphin
+HostName dolphin.fsl.cs.sunysb.edu
+User mchen
+
+Host msl
+HostName msl.cewit.stonybrook.edu
+User mchen
+
+Host chevron8
+User mchen
+ProxyCommand ssh msl -W %h:%p
