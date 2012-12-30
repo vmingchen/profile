@@ -83,6 +83,9 @@ map <leader>b :ls<cr>:b
 " Tag
 map <leader>f :tag 
 
+" run Makefile and open error
+map <leader>k :make \| copen<cr>
+
 " make current window the only window
 map <leader>o :only<cr>
 
@@ -130,6 +133,9 @@ set cindent
 "Wrap lines
 set wrap
 
+" the defaul on Mac is 0
+set modelines=10
+
 " function key
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
@@ -144,6 +150,7 @@ autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
 autocmd FileType vim set tabstop=4|set shiftwidth=4|set noexpandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|setl foldmethod=indent
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType mkd set tabstop=4|set shiftwidth=4|set noexpandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs

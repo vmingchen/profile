@@ -111,10 +111,12 @@ function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi
 # include extract script
 [ -f ~/profile/e ] && source ~/profile/e
 
+# Select several lines from a file. 
+# e.g., sel /etc/passwd 2 4 6
 function sel() {
-    target="$1"
-    cmdexpr="-n"
-    lastline=0
+    local target="$1"
+    local cmdexpr="-n"
+    local lastline=0
     shift
     for i in "$@"; do
         cmdexpr="$cmdexpr -e '${i}p'"
@@ -122,16 +124,13 @@ function sel() {
             lastline="$i"
         fi
     done
-    cmdexpr="$cmdexpr -e '${lastline}q'"
+    local cmdexpr="$cmdexpr -e '${lastline}q'"
     eval "cat -n $target | sed $cmdexpr"
 }
 
-function openeps() {
-	if uname -a | grep -q Linux; then
-		evince *.eps
-	elif uname -a | grep -q Mac; then
-		open *.eps
-	fi
+function ref() {
+	ctags -R
+	cscope -b -R
 }
 
 function opennote() {
@@ -172,6 +171,8 @@ fi
 alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
+alias open='xdg-open'
+alias tree='~/profile/tree'
 
 # names
 poj=/media/Documents/Programming/algo/poj/
@@ -185,7 +186,7 @@ shopt -s cdable_vars
 shopt -s extglob
 
 # path
-export PATH=$PATH:~/.cabal/bin/
+export PATH=/home/mchen/software/bin:$PATH
 JAVA_PATH=/usr/lib/jvm/java-6-sun
 
 # hadoop
@@ -214,3 +215,7 @@ export CVSROOT=mchen@cvs.fsl.cs.sunysb.edu:/scm/cvsroot/
 
 alias vm1='ssh -Y mchen@vm1.fsl.cs.sunysb.edu'
 alias dolphin='ssh mchen@dolphin.fsl.cs.sunysb.edu'
+alias cross='ssh mchen@crossroads.fsl.cs.sunysb.edu'
+alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
+
+export AWKPATH=$AWKPATH:~/profile/awk
