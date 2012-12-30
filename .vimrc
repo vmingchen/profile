@@ -89,9 +89,15 @@ map <leader>o :only<cr>
 " open Taglist window
 map <leader>c :Tlist<cr>
 
+" make and open copen
+map <leader>k :make \| copen<cr>
+
 " open NERDTree window
 map <leader>t :NERDTree .<cr>
 map <leader>g :NERDTree 
+
+" spell check
+map <leader>s :setlocal spell spelllang=en_us<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
