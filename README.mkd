@@ -9,4 +9,5 @@ bash vim gdb emacs
 
     $ cd ~
     $ git clone git://github.com/brianchenming/profile.git
+    $ cd profile
     $ ./link.sh
