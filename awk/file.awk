@@ -38,7 +38,7 @@ function bits2str(bits,        data, mask)
 # styles:
 #	0 -- K, M, G, T
 #	1 -- B, KB, MB, GB, TB
-function m2hsize(msize, istyle)
+function m2hsize(msize, istyle,		styles, units, base, tmp, i)
 {
 	styles[0] = ":K:M:G:T";
 	styles[1] = "B:KB:MB:GB:TB";

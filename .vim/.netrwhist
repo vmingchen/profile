@@ -1,2 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/mchen/staticfs-rick/doc'
+let g:netrw_dirhist_2='/home/mchen/cse602/benchmark/leveldb'
+let g:netrw_dirhist_3='/home/mchen/cse602/benchmark/leveldb/results/ratio/parse/..'
+let g:netrw_dirhist_4='/usr/local/bin'
+let g:netrw_dirhist_5='/home/mchen/greendm/benchmark/bench-scripts'
