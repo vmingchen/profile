@@ -161,6 +161,7 @@ alias r='screen -D -R'
 alias x='exit'
 alias j='jobs'
 alias n="opennote"
+alias i="ipython"
 
 if type python26 >/dev/null 2>&1; then
     alias python='python26'
