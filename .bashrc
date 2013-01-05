@@ -151,6 +151,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# http://askubuntu.com/questions/9920/x11-forwarding-over-gnu-screen-is-it-possible
+alias screen='env DISPLAY=$DISPLAY screen'
+
 alias h='history' 
 alias p='ps -ef'
 alias f='pushd'
@@ -220,3 +223,4 @@ alias cross='ssh mchen@crossroads.fsl.cs.sunysb.edu'
 alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 
 export AWKPATH=$AWKPATH:~/profile/awk
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
