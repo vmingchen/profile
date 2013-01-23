@@ -166,6 +166,9 @@ alias j='jobs'
 alias n="opennote"
 alias i="ipython"
 
+# get full path of a file
+alias y='readlink -f'
+
 if type python26 >/dev/null 2>&1; then
     alias python='python26'
 fi
