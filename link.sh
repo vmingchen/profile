@@ -33,7 +33,7 @@ function link_files()
 }
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit .screenrc .gitconfig \
-    .git-completion.bash .gitignore
+    .git-completion.bash .gitignore .tmux.conf
 #link_files `ls -A $prof`
 
 # load machine specific settings
