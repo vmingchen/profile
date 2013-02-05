@@ -165,9 +165,11 @@ alias x='exit'
 alias j='jobs'
 alias n="opennote"
 alias i="ipython"
+alias o="open"
 
 # get full path of a file
 alias y='readlink -f'
+alias z='echo "`uname -n`: `pwd`"'
 
 if type python26 >/dev/null 2>&1; then
     alias python='python26'
@@ -227,3 +229,5 @@ alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 
 export AWKPATH=$AWKPATH:~/profile/awk
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
+
+export PATH=$HOME/software/epd_free-7.3-2-rh5-x86_64/bin:$PATH
