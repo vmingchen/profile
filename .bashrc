@@ -231,4 +231,4 @@ export PATH=/home/mchen/software/epd_free-7.3-2-rh5-x86_64/bin:$PATH
 export AWKPATH=$AWKPATH:~/profile/awk
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
 
-export PATH=$HOME/software/epd_free-7.3-2-rh5-x86_64/bin:$PATH
+export PATH=$HOME/software/epd/bin:$PATH
