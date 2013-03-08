@@ -8,6 +8,10 @@ HostName dolphin.fsl.cs.sunysb.edu
 User mchen
 ForwardX11 yes
 
+Host vm
+HostName 130.245.126.180
+User mchen
+
 Host msl
 HostName msl.cewit.stonybrook.edu
 User mchen
@@ -17,3 +21,12 @@ Host chev
 User mchen
 ProxyCommand ssh msl -W chevron8:%p
 ForwardX11 yes
+
+Host sauron
+User mchen
+ProxyCommand ssh msl -W sauron:%p
+ForwardX11 yes
+
+Host osf
+HostName 192.168.101.134
+User mchen
