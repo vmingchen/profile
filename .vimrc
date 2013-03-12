@@ -210,3 +210,8 @@ au FileType markdown set foldexpr=MkdFoldLevel(v:lnum)
 if filereadable(expand("~/.local_vimrc"))
 	source ~/.local_vimrc
 endif
+
+" View RFC
+if expand('%:t') =~? 'rfc\d\+'
+	setfiletype rfc
+endif 
