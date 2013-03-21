@@ -213,5 +213,6 @@ endif
 
 " View RFC
 if expand('%:t') =~? 'rfc\d\+'
+	"set readonly nomodifiable
 	setfiletype rfc
 endif 
