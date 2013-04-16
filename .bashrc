@@ -107,6 +107,7 @@ function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
 function max() { if [ $# -eq 0 ]; then mx; else echo "$@" | tr ' ' '\n' | mx; fi }
 function min() { if [ $# -eq 0 ]; then mn; else echo "$@" | tr ' ' '\n' | mn; fi }
 function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi }
+function errno() { grep -w $1 /usr/include/asm-generic/errno*.h ; }
 
 # include extract script
 [ -f ~/profile/e ] && source ~/profile/e
@@ -231,4 +232,4 @@ export PATH=/home/mchen/software/epd_free-7.3-2-rh5-x86_64/bin:$PATH
 export AWKPATH=$AWKPATH:~/profile/awk
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
 
-export PATH=$HOME/software/epd/bin:$PATH
+export PATH=$HOME/software/epd/bin:/usr/local/bin:$PATH
