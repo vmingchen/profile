@@ -22,3 +22,6 @@
 	smtpserverport = 587
 	aliasesfile = /home/mchen/.gitaliases
 	aliasfiletype = mailrc
+
+[push]
+	default = matching
