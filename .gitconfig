@@ -20,3 +20,5 @@
 	smtpserver = smtp.gmail.com
 	smtpuser = v.mingchen@gmail.com
 	smtpserverport = 587
+	aliasesfile = /home/mchen/.gitaliases
+	aliasfiletype = mailrc
