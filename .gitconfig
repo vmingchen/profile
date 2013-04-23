@@ -1,6 +1,6 @@
 [user]
-	name = Ming
-	email = mchen@cs.stonybrook.edu
+	name = Ming Chen
+	email = v.mingchen@gmail.com
 [branch "master"]
         remote = origin
         merge = refs/heads/master
@@ -14,3 +14,9 @@
 	pl = log --color --pretty=format:'%h - %an, %ar : %s'
 	ll = log --pretty=oneline
 	gl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)     %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = v.mingchen@gmail.com
+	smtpserverport = 587
