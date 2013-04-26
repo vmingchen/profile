@@ -33,7 +33,7 @@ function link_files()
 }
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
-	.gitconfig .git-completion.bash .gitignore .gitaliases
+	.gitconfig .git-completion.bash .gitignore .gitaliases \
 	.screenrc .tmux.conf \
 
 # install ssh config
