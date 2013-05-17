@@ -66,10 +66,10 @@ let mapleader = ","
 map <leader>cd :cd %:p:h<cr>
 
 " Lookup in manual
-map <leader>m :!man 
+map <leader>m :!man
 
 " Search tag
-map <leader>f :tag 
+map <leader>f :tag
 
 " Open a buffer as scratch board
 map <leader>q :tabe ~/buffer<CR>
@@ -78,10 +78,10 @@ map <leader>q :tabe ~/buffer<CR>
 map <leader>h :<C-F>
 
 " List and choose buffer window
-map <leader>b :ls<cr>:b 
+map <leader>b :ls<cr>:b
 
 " Tag
-map <leader>f :tag 
+map <leader>f :tag
 
 " run Makefile and open error
 map <leader>k :make \| copen<cr>
@@ -97,7 +97,7 @@ map <leader>k :make \| copen<cr>
 
 " open NERDTree window
 map <leader>t :NERDTree .<cr>
-map <leader>g :NERDTree 
+map <leader>g :NERDTree
 
 " spell check
 map <leader>s :setlocal spell spelllang=en_us<cr>
@@ -106,7 +106,7 @@ map <leader>s :setlocal spell spelllang=en_us<cr>
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set noexpandtab
-set tabstop=4 
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
@@ -215,4 +215,28 @@ endif
 if expand('%:t') =~? 'rfc\d\+'
 	"set readonly nomodifiable
 	setfiletype rfc
-endif 
+endif
+
+" Display or remove unwanted whitespace with a script
+function ShowSpaces(...)
+  let @/='\v(\s+$)|( +\ze\t)'
+  let oldhlsearch=&hlsearch
+  if !a:0
+    let &hlsearch=!&hlsearch
+  else
+    let &hlsearch=a:1
+  end
+  return oldhlsearch
+endfunction
+
+function TrimSpaces() range
+  let oldhlsearch=ShowSpaces(1)
+  execute a:firstline.",".a:lastline."substitute ///gec"
+  let &hlsearch=oldhlsearch
+endfunction
+
+command -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
+command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
+nnoremap <F12>     :ShowSpaces 1<CR>
+nnoremap <S-F12>   m`:TrimSpaces<CR>``
+vnoremap <S-F12>   :TrimSpaces<CR>
