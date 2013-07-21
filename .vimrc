@@ -69,7 +69,7 @@ map <leader>cd :cd %:p:h<cr>
 map <leader>m :!man
 
 " Search tag
-map <leader>f :tag
+map <leader>f :tag 
 
 " Open a buffer as scratch board
 map <leader>q :tabe ~/buffer<CR>
@@ -148,7 +148,7 @@ autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
 autocmd FileType vim set tabstop=4|set shiftwidth=4|set noexpandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|setl foldmethod=indent
+autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|set foldmethod=indent
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType mkd set tabstop=4|set shiftwidth=4|set noexpandtab
 
