@@ -1,0 +1,18 @@
+#!/bin/sh
+# convert EPS files into JPG, with a good enough resolution
+# to be included in PPT presentations.
+#set -x
+
+if test -z "$1"
+then
+    echo "Usage: $0 file1.eps [file2.eps ...]"
+    exit 1
+fi
+
+for i in "$@"
+do
+	n=`echo $i | sed 's/\.eps$/.jpg/'`
+	cmd="convert -density 1000 $i $n"
+	echo $cmd
+	$cmd
+done
