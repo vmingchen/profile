@@ -107,6 +107,7 @@ function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
 function max() { if [ $# -eq 0 ]; then mx; else echo "$@" | tr ' ' '\n' | mx; fi }
 function min() { if [ $# -eq 0 ]; then mn; else echo "$@" | tr ' ' '\n' | mn; fi }
 function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi }
+function errno() { grep -w $1 /usr/include/asm-generic/errno*.h ; }
 
 # include extract script
 [ -f ~/profile/e ] && source ~/profile/e
@@ -151,16 +152,22 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# http://askubuntu.com/questions/9920/x11-forwarding-over-gnu-screen-is-it-possible
-alias screen='env DISPLAY=$DISPLAY screen'
+# tmux preferred if exist
+if type tmux >/dev/null 2>&1; then
+	alias s='tmux'
+	alias r='tmux attach -d'
+else
+	# http://askubuntu.com/questions/9920/x11-forwarding-over-gnu-screen-is-it-possible
+	alias screen='env DISPLAY=$DISPLAY screen'
+	alias s='screen'
+	alias r='screen -D -R'
+fi
 
 alias h='history' 
 alias p='ps -ef'
 alias f='pushd'
 alias b='popd'
 alias v='dirs -v'
-alias s='screen'
-alias r='screen -D -R'
 alias x='exit'
 alias j='jobs'
 alias n="opennote"
@@ -218,7 +225,7 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
-source ~/.git-completion.bash
+[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 export GOOGLE_TEST=/home/ming/software/gtest-1.6.0
 export CVSROOT=mchen@cvs.fsl.cs.sunysb.edu:/scm/cvsroot/
 
@@ -230,4 +237,4 @@ alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 export AWKPATH=$AWKPATH:~/profile/awk
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
 
-export PATH=$HOME/software/epd/bin:$HOME/software/bin:$PATH
+export PATH=$HOME/software/epd/bin:$HOME/software/bin:/usr/local/bin:$PATH

@@ -1,6 +1,6 @@
 [user]
 	name = Ming Chen
-	email = mchen@cs.stonybrook.edu
+	email = v.mingchen@gmail.com
 [branch "master"]
         remote = origin
         merge = refs/heads/master
@@ -20,3 +20,8 @@
 	smtpserver = smtp.gmail.com
 	smtpuser = v.mingchen@gmail.com
 	smtpserverport = 587
+	aliasesfile = /home/mchen/.gitaliases
+	aliasfiletype = mailrc
+
+[push]
+	default = matching
