@@ -176,7 +176,7 @@ alias o="open"
 
 # get full path of a file
 alias y='readlink -f'
-alias z='echo "`uname -n`: `pwd`"'
+alias z='echo -e "`uname -n`\n`dirs -v`"'
 
 if type python26 >/dev/null 2>&1; then
     alias python='python26'
