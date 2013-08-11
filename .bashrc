@@ -173,6 +173,10 @@ alias j='jobs'
 alias n="opennote"
 alias i="ipython"
 alias o="open"
+alias fa='pushd +1 > /dev/null; dirs -v'
+alias fb='pushd +2 > /dev/null; dirs -v'
+alias fc='pushd +3 > /dev/null; dirs -v'
+alias fd='pushd +4 > /dev/null; dirs -v'
 
 # get full path of a file
 alias y='readlink -f'

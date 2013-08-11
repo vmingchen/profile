@@ -148,7 +148,7 @@ autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
 autocmd FileType vim set tabstop=4|set shiftwidth=4|set noexpandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|set foldmethod=indent
+autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab|set foldmethod=indent
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType mkd set tabstop=4|set shiftwidth=4|set noexpandtab
 
