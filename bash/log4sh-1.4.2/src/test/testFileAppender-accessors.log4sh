@@ -1,0 +1,8 @@
+# $Id: testFileAppender-accessors.log4sh 416 2007-01-04 00:50:14Z sfsetse $
+
+# set root logger to INFO, and give it one appender mySTDERR
+log4sh.rootLogger = INFO, accessors
+
+# add a file appender
+log4sh.appender.accessors = FileAppender
+log4sh.appender.accessors.File = ${APP_ACCESSORS_FILE}
