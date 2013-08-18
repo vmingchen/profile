@@ -112,7 +112,7 @@ set softtabstop=4
 
 map <leader>t2 :set shiftwidth=2 tabstop=2 expandtab<cr>
 map <leader>t4 :set shiftwidth=4 tabstop=4 expandtab<cr>
-map <leader>t8 :set shiftwidth=8 tabstop=8<cr>
+map <leader>t8 :set shiftwidth=8 tabstop=8 noexpandtab<cr>
 
 set smarttab
 set lbr
@@ -144,11 +144,12 @@ nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
+autocmd FileType cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
-autocmd FileType vim set tabstop=4|set shiftwidth=4|set noexpandtab
-autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab|set foldmethod=indent
+autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType sh set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType mkd set tabstop=4|set shiftwidth=4|set noexpandtab
 
