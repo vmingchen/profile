@@ -1,0 +1,70 @@
+# vim:et:ft=sh:sts=2:sw=2
+
+# Functions copied from Bash Shell Function Library
+# http://code.google.com/p/bsfl/
+#
+# returns lowercase string
+#
+function tolower {
+  echo "$1" | tr '[:upper:]' '[:lower:]'
+}
+
+#
+# returns uppercase string
+#
+function toupper {
+  echo "$1" | tr '[:lower:]' '[:upper:]'
+}
+
+#
+# Only returns the first part of a string, delimited by tabs or spaces
+#
+function trim {
+  echo $1
+}
+
+#
+# Usage: echo "1 2 3" | get_mean_var
+#
+function get_mean_var() {
+  awk '
+    BEGIN { sum = 0; n = 0; }
+    ($1 == "energy") {energy[n++] = $1; sum += $1;}
+    END { 
+      avg = sum / n;
+      dv = 0;
+      for (i = 0; i < n; ++i) {
+        dv += (energy[i] - avg) * (energy[i] - avg);
+      }
+      stdv = sqrt(dv / n);
+      var = 2 * stdv / sqrt(n);
+      printf("%.3f\t%.3f\n", avg, var);
+    }
+  ' -
+}
+
+#
+# WattsUP power meter
+#
+function wattsup_measure() {
+  # Setup the Watts up Pro
+  wattsup /dev/ttyUSB0  "#C,W,18,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;" s
+
+  # Starting a new combination
+  # Resetting the Wattsup Pro to internal logging every 1 sec
+  wattsup /dev/ttyUSB0  "#L,W,3,I,0,1;" s
+
+  # run and measure
+  echo "measuring ..."
+  sleep 60s
+
+  # retrieve power and energy data from the wattsup power meter
+  #wattsup /dev/ttyUSB0  "#D,R,0;" r | grep "#d" | cut -d ',' -f 5 > "watts.log"
+  #wattsup /dev/ttyUSB0  "#D,R,0;" r | grep "#d" | cut -d ',' -f 8 > "energy.log"
+  wattsup /dev/ttyUSB0  "#D,R,0;" r | 
+    awk -v FS=',' '
+      BEGIN { powersum = 0; n = 0; lastenergy = 0; }
+      ($2 == "#d") { powersum += $5; n += 1; lastenergy = $8; }
+      END { printf("average-power: %.1f\ntotal-energy: %.1f\n", powersum/n, lastenergy); }
+    ' -
+}
