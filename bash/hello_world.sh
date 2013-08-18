@@ -14,7 +14,7 @@
 
 # source shflags
 . ./shflags
-LOG4SH_CONFIGURATION='none' . ./log4sh
+. ./log4sh
 
 # define a 'name' command-line string flag
 DEFINE_string 'name' 'world' 'name to say hello to' 'n'
