@@ -144,14 +144,14 @@ nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
-autocmd FileType cpp set expandtab|set tabstop=2|set shiftwidth=2
+autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
-autocmd FileType sh set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType mkd set tabstop=4|set shiftwidth=4|set noexpandtab
+autocmd FileType mkd set tabstop=2|set shiftwidth=2|set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
