@@ -153,6 +153,8 @@ autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType mkd set tabstop=2|set shiftwidth=2|set expandtab
 
+au BufNewFile *.py 0r ~/.vim/templates/py.py
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -209,13 +211,13 @@ au FileType markdown set foldmethod=expr
 au FileType markdown set foldexpr=MkdFoldLevel(v:lnum)
 
 if filereadable(expand("~/.local_vimrc"))
-	source ~/.local_vimrc
+  source ~/.local_vimrc
 endif
 
 " View RFC
 if expand('%:t') =~? 'rfc\d\+'
-	"set readonly nomodifiable
-	setfiletype rfc
+  "set readonly nomodifiable
+  setfiletype rfc
 endif
 
 " Display or remove unwanted whitespace with a script
