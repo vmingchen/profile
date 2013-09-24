@@ -66,7 +66,7 @@ let mapleader = ","
 map <leader>cd :cd %:p:h<cr>
 
 " Lookup in manual
-map <leader>m :!man 
+map <leader>m :!man
 
 " Search tag
 map <leader>f :tag 
@@ -78,10 +78,10 @@ map <leader>q :tabe ~/buffer<CR>
 map <leader>h :<C-F>
 
 " List and choose buffer window
-map <leader>b :ls<cr>:b 
+map <leader>b :ls<cr>:b
 
 " Tag
-map <leader>f :tag 
+map <leader>f :tag
 
 " run Makefile and open error
 map <leader>k :make \| copen<cr>
@@ -97,7 +97,7 @@ map <leader>k :make \| copen<cr>
 
 " open NERDTree window
 map <leader>t :NERDTree .<cr>
-map <leader>g :NERDTree 
+map <leader>g :NERDTree
 
 " spell check
 map <leader>s :setlocal spell spelllang=en_us<cr>
@@ -106,13 +106,13 @@ map <leader>s :setlocal spell spelllang=en_us<cr>
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set noexpandtab
-set tabstop=4 
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-map <leader>t2 :set shiftwidth=2 tabstop=2<cr>
-map <leader>t4 :set shiftwidth=4 tabstop=4<cr>
-map <leader>t8 :set shiftwidth=8 tabstop=8<cr>
+map <leader>t2 :set shiftwidth=2 tabstop=2 expandtab<cr>
+map <leader>t4 :set shiftwidth=4 tabstop=4 expandtab<cr>
+map <leader>t8 :set shiftwidth=8 tabstop=8 noexpandtab<cr>
 
 set smarttab
 set lbr
@@ -144,13 +144,14 @@ nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
+autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType sh set tabstop=4|set shiftwidth=4|set noexpandtab
-autocmd FileType vim set tabstop=4|set shiftwidth=4|set noexpandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set noexpandtab|setl foldmethod=indent
+autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType mkd set tabstop=4|set shiftwidth=4|set noexpandtab
+autocmd FileType mkd set tabstop=2|set shiftwidth=2|set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
@@ -215,4 +216,28 @@ endif
 if expand('%:t') =~? 'rfc\d\+'
 	"set readonly nomodifiable
 	setfiletype rfc
-endif 
+endif
+
+" Display or remove unwanted whitespace with a script
+function ShowSpaces(...)
+  let @/='\v(\s+$)|( +\ze\t)'
+  let oldhlsearch=&hlsearch
+  if !a:0
+    let &hlsearch=!&hlsearch
+  else
+    let &hlsearch=a:1
+  end
+  return oldhlsearch
+endfunction
+
+function TrimSpaces() range
+  let oldhlsearch=ShowSpaces(1)
+  execute a:firstline.",".a:lastline."substitute ///gec"
+  let &hlsearch=oldhlsearch
+endfunction
+
+command -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
+command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
+nnoremap <F12>     :ShowSpaces 1<CR>
+nnoremap <S-F12>   m`:TrimSpaces<CR>``
+vnoremap <S-F12>   :TrimSpaces<CR>
