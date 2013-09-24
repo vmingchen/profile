@@ -227,7 +227,6 @@ alias dolphin='ssh mchen@dolphin.fsl.cs.sunysb.edu'
 alias cross='ssh mchen@crossroads.fsl.cs.sunysb.edu'
 alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 
-export PATH=/home/mchen/software/epd_free-7.3-2-rh5-x86_64/bin:$PATH
 export AWKPATH=$AWKPATH:~/profile/awk
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
 
