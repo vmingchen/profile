@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 '''
+
+by Ming Chen, v.mingchen@gmail.com
 '''
 
 import gflags
 import os
 
-from util.log import GetLoggers,SetLogLevel
+from myutil.log import GetLoggers,SetLogLevel
 
 GetLoggers(__name__)
 FLAGS = gflags.FLAGS
@@ -21,9 +23,11 @@ if __name__ == '__main__':
   except gflags.FlagsError, e:
     print('%s\\nUsage: %s ARGS\\n%s' % (e, sys.argv[0], FLAGS))
     sys.exit(1)
-  if FLAGS.debug:
-    print('non-flag arguments: %s' % argv)
-    SetLogLevel(__name__, 'Debug')
+
+  SetLogLevel(__name__, FLAGS.logging_level)
+
+  INFO('non-flag arguments: %s' % argv)
+
   main(argv)
 
 # vim:set sr et ts=2 sw=2 ft=python fenc=utf-8: // See Vim, :help 'modeline'
