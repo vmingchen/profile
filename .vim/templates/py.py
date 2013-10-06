@@ -12,7 +12,7 @@ from myutil.log import GetLoggers,SetLogLevel
 GetLoggers(__name__)
 FLAGS = gflags.FLAGS
 
-gflags.DEFINE_boolean('debug', False, 'produces debugging output')
+gflags.DEFINE_string('logging_level', 'INFO', 'DEBUG, INFO, WARN, or FATAL')
 
 def main(argv):
   # TODO
@@ -21,7 +21,7 @@ if __name__ == '__main__':
   try:
     argv = FLAGS(sys.argv)  # parse flags
   except gflags.FlagsError, e:
-    print('%s\\nUsage: %s ARGS\\n%s' % (e, sys.argv[0], FLAGS))
+    print('%s\nUsage: %s ARGS\n%s' % (e, sys.argv[0], FLAGS))
     sys.exit(1)
 
   SetLogLevel(__name__, FLAGS.logging_level)
