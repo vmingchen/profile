@@ -6,9 +6,32 @@ snippet imp
 # Module Docstring
 snippet docs
 	'''
-	File: ${1:`Filename('$1.py', 'foo.py')`}
-	Author: ${2:`g:snips_author`}
-	Description: ${3}
+	SYNOPSIS
+
+	  ${1:`Filename('$1.py', 'foo.py')`} [--help] [-v,--verbose] [--version]
+
+	DESCRIPTION
+
+	  TODO This describes how to use this script.
+	  This docstring will be printed by the script if there is an error or
+	  if the user requests help (-h or --help).
+
+	EXAMPLES
+
+	  TODO: Show some examples of how to use this script.
+
+	AUTHOR
+	
+	  v.mingchen@gmail.com
+	
+	LICENSE
+	
+	  This script is in the public domain.
+	
+	VERSION
+
+	  0.1
+	
 	'''
 snippet wh
 	while ${1:condition}:
