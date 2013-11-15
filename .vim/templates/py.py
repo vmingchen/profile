@@ -6,6 +6,7 @@ by Ming Chen, v.mingchen@gmail.com
 
 import gflags
 import os
+import sys
 
 from myutil.log import GetLoggers,SetLogLevel
 
