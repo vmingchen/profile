@@ -138,6 +138,11 @@ function opennote() {
     vim ~/notes/`date +%y%m%d`.mkd
 }
 
+function ro() {
+  scp cross:$1 ~/tmp
+  xdg-open ~/tmp/`basename $1` &
+}
+
 # alias
 alias grep="grep $COLOR"
 alias nau='nautilus'
