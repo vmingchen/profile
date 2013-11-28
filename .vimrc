@@ -81,7 +81,7 @@ map <leader>h :<C-F>
 map <leader>b :ls<cr>:b
 
 " Tag
-map <leader>f :tag
+map <leader>f :tag 
 
 " run Makefile and open error
 map <leader>k :make \| copen<cr>
