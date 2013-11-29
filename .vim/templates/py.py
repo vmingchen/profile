@@ -13,7 +13,8 @@ from myutil.log import GetLoggers,SetLogLevel
 GetLoggers(__name__)
 FLAGS = gflags.FLAGS
 
-gflags.DEFINE_string('logging_level', 'INFO', 'DEBUG, INFO, WARN, or FATAL')
+gflags.DEFINE_enum('logging_level', 'INFO', 'DEBUG INFO WARN FATAL'.split(),
+                   'logging level')
 
 def main(argv):
   # TODO
