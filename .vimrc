@@ -161,6 +161,10 @@ au BufNewFile *.py 0r ~/.vim/templates/py.py
 "My information
 iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
+iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
+
+iab ok 2.6.32el6
+iab nk 3.12.0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Tex

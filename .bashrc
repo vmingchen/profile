@@ -129,8 +129,15 @@ function sel() {
     eval "cat -n $target | sed $cmdexpr"
 }
 
+function crm() {
+  for f in "$@"; do
+    rm "$f"
+    cvs remove "$f"
+  done
+}
+
 function ref() {
-	ctags -R
+	ctags -R .
 	cscope -b -R
 }
 
