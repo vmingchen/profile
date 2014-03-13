@@ -218,6 +218,11 @@ if filereadable(expand("~/.local_vimrc"))
   source ~/.local_vimrc
 endif
 
+" Associate .proto to google protocol buffer files
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
+
 " View RFC
 if expand('%:t') =~? 'rfc\d\+'
   "set readonly nomodifiable
