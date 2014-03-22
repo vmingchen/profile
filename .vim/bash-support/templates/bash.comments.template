@@ -18,13 +18,9 @@
 == comment.file-description == start ==
 #!/bin/bash - 
 #=============================================================================
-#
-#         USAGE:  ./|FILENAME| 
+# <CURSOR>
 # 
-#   DESCRIPTION:  <CURSOR>
-# 
-#        AUTHOR: |AUTHOR|, |EMAIL|
-#
+# by |AUTHOR|, |EMAIL|
 #=============================================================================
 
 set -o nounset                          # treat unset variables as an error

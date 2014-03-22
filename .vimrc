@@ -161,6 +161,10 @@ au BufNewFile *.py 0r ~/.vim/templates/py.py
 "My information
 iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
+iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
+
+iab ok 2.6.32el6
+iab nk 3.12.0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Tex
@@ -213,6 +217,11 @@ au FileType markdown set foldexpr=MkdFoldLevel(v:lnum)
 if filereadable(expand("~/.local_vimrc"))
   source ~/.local_vimrc
 endif
+
+" Associate .proto to google protocol buffer files
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
 
 " View RFC
 if expand('%:t') =~? 'rfc\d\+'
