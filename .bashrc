@@ -139,7 +139,11 @@ function opennote() {
 }
 
 function ro() {
+  local dt=${1/.eps/.dat}
+  local gp=${1/.eps/.gp}
   scp cross:$1 ~/tmp
+  scp cross:$dt ~/tmp
+  scp cross:$gp ~/tmp
   xdg-open ~/tmp/`basename $1` &
 }
 
