@@ -23,6 +23,7 @@
 	smtpserverport = 587
 	aliasesfile = /home/mchen/.gitaliases
 	aliasfiletype = mailrc
+	smtpsslcertpath = /etc/ssl/certs/ca-bundle.trust.crt
 
 [push]
 	default = matching
