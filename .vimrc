@@ -260,3 +260,5 @@ command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 nnoremap <F12>     :ShowSpaces 1<CR>
 nnoremap <S-F12>   m`:TrimSpaces<CR>``
 vnoremap <S-F12>   :TrimSpaces<CR>
+
+autocmd BufRead * DetectIndent
