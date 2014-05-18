@@ -142,8 +142,13 @@ nnoremap <F8> :setl noai nocin nosi inde=<CR>
 " no autoindentation
 :nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
+map <F9> :set cinoptions=>8,(0,:0
+
+" C++: set cinoptions=g1
+
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
+autocmd FileType c set cinoptions=>8,(0,:0
 autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
