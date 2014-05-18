@@ -252,6 +252,14 @@ function TrimSpaces() range
   let &hlsearch=oldhlsearch
 endfunction
 
+if v:version >= 703
+	let &colorcolumn=join(range(81,999),",")
+endif
+
+" https://github.com/ciaranm/detectindent
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+
 command -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 nnoremap <F12>     :ShowSpaces 1<CR>
