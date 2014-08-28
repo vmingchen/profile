@@ -222,17 +222,13 @@ shopt -s cdable_vars
 shopt -s extglob
 
 # path
-export PATH=/home/mchen/software/bin:$PATH
 JAVA_PATH=/usr/lib/jvm/java-6-sun
 
 # hadoop
 export HADOOP_CONF_DIR=/home/chm/hadoop/conf
 export HADOOP_HOME=/home/chm/hadoop
 
-alias g42='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.42'
-alias g3='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.123.3'
 alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
-#alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.75'
 alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no chenming@10.11.203.218'
 alias gdd='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.76'
 alias scp='scp -o GSSAPIAuthentication=no'
