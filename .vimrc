@@ -267,3 +267,6 @@ nnoremap <S-F12>   m`:TrimSpaces<CR>``
 vnoremap <S-F12>   :TrimSpaces<CR>
 
 autocmd BufRead * DetectIndent
+
+map <C-I> :pyf ~/profile/clang-format.py<CR>
+imap <C-I> <ESC>:pyf ~/profile/clang-format.py<CR>i
