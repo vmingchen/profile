@@ -246,7 +246,6 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
-export GOOGLE_TEST=/home/ming/software/gtest-1.6.0
 export CVSROOT=mchen@cvs.fsl.cs.sunysb.edu:/scm/cvsroot/
 
 alias vm1='ssh -Y mchen@vm1.fsl.cs.sunysb.edu'
