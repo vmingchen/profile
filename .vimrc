@@ -252,10 +252,6 @@ function TrimSpaces() range
   let &hlsearch=oldhlsearch
 endfunction
 
-"if v:version >= 703
-	"let &colorcolumn=join(range(81,999),",")
-"endif
-
 " https://github.com/ciaranm/detectindent
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
@@ -268,5 +264,5 @@ vnoremap <S-F12>   :TrimSpaces<CR>
 
 autocmd BufRead * DetectIndent
 
-map <C-I> :pyf $HOME/profile/clang-format.py<CR>
-imap <C-I> <ESC>:pyf $HOME/profile/clang-format.py<CR>i
+map <C-I> :pyf ~/profile/clang-format.py<CR>
+imap <C-I> <ESC>:pyf ~/profile/clang-format.py<CR>i
