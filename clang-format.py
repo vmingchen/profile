@@ -30,7 +30,7 @@ binary = '/usr/bin/clang-format'
 # 'clang-format --help' for a list of supported styles. The default looks for
 # a '.clang-format' or '_clang-format' file to indicate the style that should be
 # used.
-style = '{BasedOnStyle: google, IndentWidth: 8}'
+style = 'file'
 
 def main():
   # Get the current text.

@@ -48,3 +48,5 @@ domain_name=`uname -n`
 if [ -f "${domain_name}.bashrc" ]; then
 	ln -s "$prof/${domain_name}.bashrc" "$HOME/.local_bashrc"
 fi
+
+ln -s "$prof/google.clang-format" .clang-format
