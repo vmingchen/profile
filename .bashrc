@@ -40,8 +40,6 @@ if [ -n "${force_color_prompt:=}" ]; then
     fi
 fi
 
-[ -f ~/.local_bashrc ] && source ~/.local_bashrc
-
 if [ "${color_prompt:=}" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -250,6 +248,8 @@ alias cross='ssh mchen@crossroads.fsl.cs.sunysb.edu'
 alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 
 export AWKPATH=$AWKPATH:~/profile/awk
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mchen/software/lib
 
-export PATH=$HOME/software/epd/bin:$HOME/software/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+
+# local bashrc overrides global bashrc
+[ -f ~/.local_bashrc ] && source ~/.local_bashrc
