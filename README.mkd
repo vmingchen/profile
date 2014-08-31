@@ -1,6 +1,6 @@
 # About
 Personal dot files
-brianchenming@gmail.com
+v.mingchen@gmail.com
 
 # Content
 bash vim gdb emacs

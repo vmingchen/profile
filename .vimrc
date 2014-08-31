@@ -196,13 +196,6 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-"au FileType markdown syn region myMkdHeaderFold
-        "\ start="\v^\z(\#{1,6})"
-        "\ skip="\v(\n\z1\#)\@="
-        "\ end="\v\n(\#)\@="ms=s-1,me=s-1
-        "\ fold contains=myMkdHeaderFold
-"au FileType markdown syn sync fromstart
-
 function MkdFoldLevel(lineNo)
     let thisline = getline(a:lineNo)
     if ( thisline =~ '^#.*' )
