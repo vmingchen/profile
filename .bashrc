@@ -135,8 +135,8 @@ function crm() {
 }
 
 function ref() {
-	ctags -R .
-	cscope -b -R
+  ctags -R .
+  cscope -b -R
 }
 
 function opennote() {
@@ -168,13 +168,13 @@ alias .....='cd ../../../..'
 
 # tmux preferred if exist
 if type tmux >/dev/null 2>&1; then
-	alias s='tmux'
-	alias r='tmux attach -d'
+  alias s='tmux'
+  alias r='tmux attach -d'
 else
-	# http://askubuntu.com/questions/9920/x11-forwarding-over-gnu-screen-is-it-possible
-	alias screen='env DISPLAY=$DISPLAY screen'
-	alias s='screen'
-	alias r='screen -D -R'
+  # http://askubuntu.com/questions/9920/x11-forwarding-over-gnu-screen-is-it-possible
+  alias screen='env DISPLAY=$DISPLAY screen'
+  alias s='screen'
+  alias r='screen -D -R'
 fi
 
 alias h='history' 
@@ -208,19 +208,10 @@ alias smth='luit -encoding gbk telnet bbs.newsmth.net'
 alias open='xdg-open'
 alias tree='~/profile/tree'
 
-# names
-poj=/media/Documents/Programming/algo/poj/
-stl=/media/Documents/Programming/cpp/stl/
-ac=/media/Documents/Active
-doc=/media/Documents/Document
-
 # options
 #set -u  # do not expand undefined variable to null, report error instead
 shopt -s cdable_vars
 shopt -s extglob
-
-# path
-JAVA_PATH=/usr/lib/jvm/java-6-sun
 
 # hadoop
 export HADOOP_CONF_DIR=/home/chm/hadoop/conf
@@ -242,9 +233,6 @@ export QT_IM_MODULE=ibus
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 export CVSROOT=mchen@cvs.fsl.cs.sunysb.edu:/scm/cvsroot/
 
-alias vm1='ssh -Y mchen@vm1.fsl.cs.sunysb.edu'
-alias dolphin='ssh mchen@dolphin.fsl.cs.sunysb.edu'
-alias cross='ssh mchen@crossroads.fsl.cs.sunysb.edu'
 alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 
 export AWKPATH=$AWKPATH:~/profile/awk
