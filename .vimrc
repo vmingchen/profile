@@ -146,6 +146,9 @@ map <F9> :set cinoptions=>8,(0,:0
 
 " C++: set cinoptions=g1
 
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
+
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
 autocmd FileType c set cinoptions=>8,(0,:0
@@ -156,9 +159,7 @@ autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType mkd set tabstop=2|set shiftwidth=2|set expandtab
-
-au BufNewFile *.py 0r ~/.vim/templates/py.py
+"autocmd FileType markdown set tabstop=2|set shiftwidth=2|set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
@@ -167,9 +168,6 @@ au BufNewFile *.py 0r ~/.vim/templates/py.py
 iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
 iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
-
-iab ok 2.6.32el6
-iab nk 3.12.0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Tex
