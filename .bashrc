@@ -17,12 +17,12 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:=}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "${TERM:=}" in
-    xterm-color) color_prompt=yes;;
+  xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -30,20 +30,20 @@ esac
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 if [ -n "${force_color_prompt:=}" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+  else
+    color_prompt=
+  fi
 fi
 
 if [ "${color_prompt:=}" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 PS1='\$'
@@ -51,17 +51,17 @@ PS1='\$'
 # If this is an xterm set the title to user@host:dir
 case "${TERM:=}" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
+  PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+  ;;
 *)
-    ;;
+  ;;
 esac
 
 # enable color support
 COLOR=
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    COLOR=' --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  COLOR=' --color=auto'
 fi
 
 # Alias definitions.
@@ -70,7 +70,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -113,18 +113,18 @@ function errno() { grep -w $1 /usr/include/asm-generic/errno*.h ; }
 # Select several lines from a file. 
 # e.g., sel /etc/passwd 2 4 6
 function sel() {
-    local target="$1"
-    local cmdexpr="-n"
-    local lastline=0
-    shift
-    for i in "$@"; do
-        cmdexpr="$cmdexpr -e '${i}p'"
-        if [ "$i" -gt "$lastline" ]; then
-            lastline="$i"
-        fi
-    done
-    local cmdexpr="$cmdexpr -e '${lastline}q'"
-    eval "cat -n $target | sed $cmdexpr"
+  local target="$1"
+  local cmdexpr="-n"
+  local lastline=0
+  shift
+  for i in "$@"; do
+    cmdexpr="$cmdexpr -e '${i}p'"
+    if [ "$i" -gt "$lastline" ]; then
+      lastline="$i"
+    fi
+  done
+  local cmdexpr="$cmdexpr -e '${lastline}q'"
+  eval "cat -n $target | sed $cmdexpr"
 }
 
 function crm() {
@@ -137,10 +137,6 @@ function crm() {
 function ref() {
   ctags -R .
   cscope -b -R
-}
-
-function opennote() {
-    vim ~/notes/`date +%y%m%d`.mkd
 }
 
 function ro() {
@@ -197,10 +193,10 @@ alias y='readlink -f'
 alias z='echo -e "`uname -n`\n`dirs -v`"'
 
 if type python26 >/dev/null 2>&1; then
-    alias python='python26'
+  alias python='python26'
 fi
 if libtool --version >/dev/null 2>&1; then
-    alias gdb='libtool --mode=execute gdb'
+  alias gdb='libtool --mode=execute gdb'
 fi
 alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
