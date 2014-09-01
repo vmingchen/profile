@@ -151,8 +151,8 @@ autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
-autocmd FileType c set cinoptions=>8,(0,:0
-autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
+"autocmd FileType c set cinoptions=>8,(0,:0
+"autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
@@ -257,3 +257,6 @@ autocmd BufRead * DetectIndent
 
 map <C-I> :pyf ~/profile/clang-format.py<CR>
 imap <C-I> <ESC>:pyf ~/profile/clang-format.py<CR>i
+
+" use only simple char in path
+set isfname=@,48-57,/,.,-,_,+,,,~
