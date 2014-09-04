@@ -260,3 +260,5 @@ imap <C-I> <ESC>:pyf ~/profile/clang-format.py<CR>i
 
 " use only simple char in path
 set isfname=@,48-57,/,.,-,_,+,,,~
+
+set backspace=indent,eol,start
