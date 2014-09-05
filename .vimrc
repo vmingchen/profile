@@ -157,6 +157,7 @@ autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType sh set iskeyword-=.  " stop at . for word motions like w, e
 autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType markdown set tabstop=2|set shiftwidth=2|set expandtab
