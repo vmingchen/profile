@@ -157,6 +157,7 @@ autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType sh set iskeyword-=.  " stop at . for word motions like w, e
 autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType markdown set tabstop=2|set shiftwidth=2|set expandtab
@@ -244,8 +245,8 @@ function TrimSpaces() range
 endfunction
 
 " https://github.com/ciaranm/detectindent
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
+let g:detectindent_preferred_expandtab = 0
+let g:detectindent_preferred_indent = 8
 
 command -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
