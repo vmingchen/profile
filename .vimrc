@@ -74,8 +74,9 @@ map <leader>vp `[v`]
 " Lookup in manual
 map <leader>m :!man
 
-" Search tag
-map <leader>f :tag 
+" Lookup symbol with Ack
+map <leader>a :tab split<CR>:Ack ""<Left>
+map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Open a buffer as scratch board
 map <leader>q :tabe ~/buffer<CR>
@@ -84,7 +85,7 @@ map <leader>q :tabe ~/buffer<CR>
 map <leader>h :<C-F>
 
 " List and choose buffer window
-map <leader>b :ls<cr>:b
+map <leader>b :ls<cr>:b 
 
 " Tag
 map <leader>f :tag 
@@ -97,9 +98,6 @@ map <leader>o :only<cr>
 
 " open Taglist window
 map <leader>c :Tlist<cr>
-
-" make and open copen
-map <leader>k :make \| copen<cr>
 
 " open NERDTree window
 map <leader>t :NERDTree .<cr>
