@@ -65,6 +65,9 @@ let mapleader = ","
 " Switch to current dir
 map <leader>cd :cd %:p:h<cr>
 
+" Select the content we just pasted
+map <leader>vp `[v`]
+
 " Lookup in manual
 map <leader>m :!man
 
