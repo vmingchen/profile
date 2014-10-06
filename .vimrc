@@ -10,6 +10,9 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+" Enable pathogen.vim
+execute pathogen#infect()
+
 " turn backup off
 set nobackup
 set nowb
