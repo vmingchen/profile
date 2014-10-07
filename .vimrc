@@ -99,8 +99,11 @@ map <leader>o :only<cr>
 " open Taglist window
 map <leader>c :Tlist<cr>
 
-
+" search using grep and show results in Quickfix
 map <leader>g :copen<CR>:grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
+
+" open NERDTree window
+map <leader>tt :NERDTreeToggle<cr>
 
 " spell check
 map <leader>s :setlocal spell spelllang=en_us<cr>
@@ -152,7 +155,7 @@ map <F9> :set cinoptions=>8,(0,:0
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
-autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
+"autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
 autocmd FileType c set cinoptions=>8,(0,:0
 "autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
