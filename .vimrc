@@ -78,7 +78,7 @@ map <leader>q :tabe ~/buffer<CR>
 map <leader>h :<C-F>
 
 " List and choose buffer window
-map <leader>b :ls<cr>:b
+map <leader>b :ls<cr>:b 
 
 " Tag
 map <leader>f :tag 
@@ -151,7 +151,7 @@ autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
-"autocmd FileType c set cinoptions=>8,(0,:0
+autocmd FileType c set cinoptions=>8,(0,:0
 "autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
