@@ -10,6 +10,9 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+" Enable pathogen.vim
+execute pathogen#infect()
+
 " turn backup off
 set nobackup
 set nowb
@@ -65,11 +68,15 @@ let mapleader = ","
 " Switch to current dir
 map <leader>cd :cd %:p:h<cr>
 
+" Select the content we just pasted
+map <leader>vp `[v`]
+
 " Lookup in manual
 map <leader>m :!man
 
-" Search tag
-map <leader>f :tag 
+" Lookup symbol with Ack
+map <leader>a :tab split<CR>:Ack ""<Left>
+map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Open a buffer as scratch board
 map <leader>q :tabe ~/buffer<CR>
@@ -91,9 +98,6 @@ map <leader>o :only<cr>
 
 " open Taglist window
 map <leader>c :Tlist<cr>
-
-" make and open copen
-map <leader>k :make \| copen<cr>
 
 " open NERDTree window
 map <leader>t :NERDTree .<cr>

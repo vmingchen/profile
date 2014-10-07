@@ -201,7 +201,6 @@ fi
 alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
-alias open='xdg-open'
 alias tree='~/profile/tree'
 
 # options
