@@ -99,9 +99,8 @@ map <leader>o :only<cr>
 " open Taglist window
 map <leader>c :Tlist<cr>
 
-" open NERDTree window
-map <leader>t :NERDTree .<cr>
-map <leader>g :NERDTree
+
+map <leader>g :copen<CR>:grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
 
 " spell check
 map <leader>s :setlocal spell spelllang=en_us<cr>
