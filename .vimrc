@@ -10,6 +10,9 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+" Enable pathogen.vim
+execute pathogen#infect()
+
 " turn backup off
 set nobackup
 set nowb
@@ -24,7 +27,7 @@ map <M-Left> :tabprev<CR>
 " set GUI
 set guioptions-=T
 set laststatus=2
-set statusline=%F%m%r%h%w\ [%n]\ [%{&ff}]%=\ dec:%b\ hex:%B\ [%l,%v][%p%%] 
+set statusline=%F%m%r%h%w\ [%n]\ %{fugitive#statusline()}%=\ [%b=%B]\ [%l,%v][%p%%] 
 " Maximize the window
 " au GUIEnter * simalt ~x
 
@@ -65,11 +68,15 @@ let mapleader = ","
 " Switch to current dir
 map <leader>cd :cd %:p:h<cr>
 
+" Select the content we just pasted
+map <leader>vp `[v`]
+
 " Lookup in manual
 map <leader>m :!man
 
-" Search tag
-map <leader>f :tag 
+" Lookup symbol with Ack
+map <leader>a :tab split<CR>:Ack ""<Left>
+map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Open a buffer as scratch board
 map <leader>q :tabe ~/buffer<CR>
@@ -78,13 +85,15 @@ map <leader>q :tabe ~/buffer<CR>
 map <leader>h :<C-F>
 
 " List and choose buffer window
-map <leader>b :ls<cr>:b
+map <leader>b :ls<cr>:b 
+"map <leader>bs :ls<CR>:sb 
+"map <leader>bh :ls<CR>:sb .h<Left><Left>
 
 " Tag
 map <leader>f :tag 
 
 " run Makefile and open error
-map <leader>k :make \| copen<cr>
+map <leader>k :make \| cwindow<cr>
 
 " make current window the only window
 map <leader>o :only<cr>
@@ -92,12 +101,15 @@ map <leader>o :only<cr>
 " open Taglist window
 map <leader>c :Tlist<cr>
 
-" make and open copen
-map <leader>k :make \| copen<cr>
+" show the quickfix window after executing any cmd contains grep
+autocmd QuickFixCmdPost *grep* cwindow
+
+" search using grep and show results in Quickfix
+map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
 
 " open NERDTree window
-map <leader>t :NERDTree .<cr>
-map <leader>g :NERDTree
+map <leader>tt :NERDTreeToggle<cr>
+map <leader>tf :NERDTreeFind<cr>
 
 " spell check
 map <leader>s :setlocal spell spelllang=en_us<cr>
@@ -149,9 +161,12 @@ map <F9> :set cinoptions=>8,(0,:0
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
-autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
+autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldmethod=syntax
+autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldminlines=5
+autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldlevel=3
+
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
-"autocmd FileType c set cinoptions=>8,(0,:0
+autocmd FileType c set cinoptions=>8,(0,:0
 "autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set textwidth=100
 autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
