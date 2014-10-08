@@ -27,7 +27,7 @@ map <M-Left> :tabprev<CR>
 " set GUI
 set guioptions-=T
 set laststatus=2
-set statusline=%F%m%r%h%w\ [%n]\ [%{&ff}]%=\ dec:%b\ hex:%B\ [%l,%v][%p%%] 
+set statusline=%F%m%r%h%w\ [%n]\ %{fugitive#statusline()}%=\ [%b=%B]\ [%l,%v][%p%%] 
 " Maximize the window
 " au GUIEnter * simalt ~x
 
@@ -86,12 +86,14 @@ map <leader>h :<C-F>
 
 " List and choose buffer window
 map <leader>b :ls<cr>:b 
+"map <leader>bs :ls<CR>:sb 
+"map <leader>bh :ls<CR>:sb .h<Left><Left>
 
 " Tag
 map <leader>f :tag 
 
 " run Makefile and open error
-map <leader>k :make \| copen<cr>
+map <leader>k :make \| cwindow<cr>
 
 " make current window the only window
 map <leader>o :only<cr>
@@ -99,8 +101,11 @@ map <leader>o :only<cr>
 " open Taglist window
 map <leader>c :Tlist<cr>
 
+" show the quickfix window after executing any cmd contains grep
+autocmd QuickFixCmdPost *grep* cwindow
+
 " search using grep and show results in Quickfix
-map <leader>g :copen<CR>:grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
+map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
 
 " open NERDTree window
 map <leader>tt :NERDTreeToggle<cr>
