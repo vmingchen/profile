@@ -72,7 +72,7 @@ map <leader>cd :cd %:p:h<cr>
 map <leader>vp `[v`]
 
 " Lookup in manual
-map <leader>m :!man
+map <leader>m :!man 
 
 " Lookup symbol with Ack
 map <leader>a :tab split<CR>:Ack ""<Left>
