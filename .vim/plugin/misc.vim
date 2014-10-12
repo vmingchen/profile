@@ -17,4 +17,4 @@ function SelectIndent()
 	endw
 	exe "normal " . line . "G"
 endfunction
-nnoremap vip :call SelectIndent()<CR>
+nnoremap <leader>vi :call SelectIndent()<CR>
