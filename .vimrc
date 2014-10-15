@@ -72,7 +72,11 @@ map <leader>cd :cd %:p:h<cr>
 map <leader>vp `[v`]
 
 " Lookup in manual
-map <leader>m :!man
+map <leader>mm :Man 
+" man page of System calls
+map <leader>ms :Man 2 
+" man page of Library calls
+map <leader>ml :Man 3 
 
 " Lookup symbol with Ack
 map <leader>a :tab split<CR>:Ack ""<Left>
@@ -225,6 +229,8 @@ function MkdFoldLevel(lineNo)
 endfunction
 au FileType markdown set foldmethod=expr
 au FileType markdown set foldexpr=MkdFoldLevel(v:lnum)
+
+runtime! ftplugin/man.vim
 
 if filereadable(expand("~/.local_vimrc"))
   source ~/.local_vimrc
