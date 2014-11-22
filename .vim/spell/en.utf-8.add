@@ -30,3 +30,8 @@ tcpdump
 SystemTap
 Solaris
 NIC
+textwidth
+nocindent
+getattr
+getattr
+statefulness
