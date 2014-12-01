@@ -139,15 +139,6 @@ function ref() {
   cscope -b -R
 }
 
-function ro() {
-  local dt=${1/.eps/.dat}
-  local gp=${1/.eps/.gp}
-  scp cross:$1 ~/tmp
-  scp cross:$dt ~/tmp
-  scp cross:$gp ~/tmp
-  xdg-open ~/tmp/`basename $1` &
-}
-
 # alias
 alias grep="grep $COLOR"
 alias nau='nautilus'
@@ -182,19 +173,19 @@ alias x='exit'
 alias j='jobs'
 alias n="opennote"
 alias i="ipython"
-alias o="xdg-open"
+alias o="open"
 alias fa='pushd +1 > /dev/null; dirs -v'
 alias fb='pushd +2 > /dev/null; dirs -v'
-alias fc='pushd +3 > /dev/null; dirs -v'
-alias fd='pushd +4 > /dev/null; dirs -v'
+# we do not further define fc to avoid conflict with bash builtin "fc"
+# use "f +3" instead.
 
 # get full path of a file
 alias y='readlink -f'
 alias z='echo -e "`uname -n`\n`dirs -v`"'
 
-if type python26 >/dev/null 2>&1; then
-  alias python='python26'
-fi
+#if type python26 >/dev/null 2>&1; then
+  #alias python='python26'
+#fi
 if libtool --version >/dev/null 2>&1; then
   alias gdb='libtool --mode=execute gdb'
 fi
@@ -218,6 +209,7 @@ alias gdd='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.76'
 alias scp='scp -o GSSAPIAuthentication=no'
 
 # settings
+export EDITOR=vim
 export SVN_EDITOR=vim
 
 # fix iBus issues on start

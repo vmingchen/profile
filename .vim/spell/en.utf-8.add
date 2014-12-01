@@ -39,3 +39,8 @@ expandtab
 cinoptions
 Ganesha
 writeback
+textwidth
+nocindent
+getattr
+setattr
+statefulness
