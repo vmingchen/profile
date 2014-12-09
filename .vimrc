@@ -185,7 +185,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "My information
-iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
+iab xdate <c-r>=strftime("%Y-%m-%d")<cr>
+iab xtime <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
 iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
 

@@ -227,4 +227,4 @@ export AWKPATH=$AWKPATH:~/profile/awk
 export PATH=/usr/local/bin:$PATH
 
 # local bashrc overrides global bashrc
-[ -f ~/.local_bashrc ] && source ~/.local_bashrc
+[ -f ~/profile/$(uname -n).bashrc ] && source ~/profile/$(uname -n).bashrc
