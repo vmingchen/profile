@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+        <appdef>
+                <appname>Eclipse</appname>
+                <equal>org.eclipse.platform.ide</equal>
+        </appdef>
+
+        <item>
+                <name>Vim Key Remapping in Eclipse</name>
+                <identifier>private.vim_keys_eclipse</identifier>
+                <only>Eclipse</only>
+                <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CONTROL_R</autogen>
+                <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
+        </item>
+</root>
