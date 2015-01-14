@@ -58,11 +58,7 @@ xterm*|rxvt*)
 esac
 
 # enable color support
-COLOR=
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  COLOR=' --color=auto'
-fi
+COLOR=' --color=auto'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -182,6 +178,8 @@ alias fb='pushd +2 > /dev/null; dirs -v'
 # get full path of a file
 alias y='readlink -f'
 alias z='echo -e "`uname -n`\n`dirs -v`"'
+
+alias nt='netstat -vatn'
 
 #if type python26 >/dev/null 2>&1; then
   #alias python='python26'
