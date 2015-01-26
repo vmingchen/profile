@@ -283,3 +283,5 @@ set isfname=@,48-57,/,.,-,_,+,,,~
 
 " make sure Ctrl-W can delete previous words not just inserted
 set backspace=indent,eol,start
+
+set clipboard=unnamed
