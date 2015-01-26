@@ -8,6 +8,7 @@
 	ui = auto
 [core]
 	editor = vim
+	excludesfile = /home/mchen/.gitignore_global
 [merge]
 	tool = vimdiff
 [alias]
