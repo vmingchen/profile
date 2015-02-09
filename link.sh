@@ -34,7 +34,7 @@ function link_files()
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
 	.gitconfig .git-completion.bash .gitignore .gitaliases \
-	.screenrc .tmux.conf \
+	.screenrc .tmux.conf .zshrc \
 
 # install ssh config
 if [ -d ~/.ssh ]; then

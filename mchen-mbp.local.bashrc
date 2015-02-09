@@ -9,3 +9,9 @@ function ro() {
   scp cross:${1%.eps}.{eps,dat,gp} /tmp
   open /tmp/$(basename $1) &
 }
+
+# ignore .DS_Store file
+export FIGNORE=DS_Store
+
+export CVS_RSH=ssh
+export CLICOLOR=1
