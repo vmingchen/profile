@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew macosx kill python cvs)
+plugins=(git brew macosx kill python cvs vim fabric)
 
 # User configuration
 
@@ -131,3 +131,7 @@ alias tree='~/profile/tree'
 alias pdb='python -m pdb'
 
 [ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
+
+DIRSTACKSIZE=8
+unsetopt autopushd
+#pushdminus pushdsilent pushdtohome
