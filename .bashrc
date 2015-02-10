@@ -58,7 +58,9 @@ xterm*|rxvt*)
 esac
 
 # enable color support
-COLOR=' --color=auto'
+if [[ $(uname -s) != 'Darwin' ]]; then
+  COLOR=' --color=auto'
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

@@ -10,7 +10,11 @@ function jabref() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# ignore .DS_Store file
+export FIGNORE=DS_Store
+
 export CVS_RSH=ssh
+export CLICOLOR=1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
