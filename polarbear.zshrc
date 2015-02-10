@@ -1,0 +1,1 @@
+export PATH="/home/mchen/.rvm/gems/ruby-2.1.5/bin:/home/mchen/.rvm/gems/ruby-2.1.5@global/bin:/home/mchen/.rvm/rubies/ruby-2.1.5/bin:/home/mchen/mac/homebrew/bin:/opt/local/libexec/gnubin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/mchen/.rvm/bin"

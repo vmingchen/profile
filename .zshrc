@@ -49,9 +49,6 @@ plugins=(git brew macosx kill python cvs vim fabric)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/usr/local/Library/Canopy/User/bin:/opt/local/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -129,6 +126,11 @@ alias nt='netstat -vatn'
 alias scp='scp -o GSSAPIAuthentication=no'
 alias tree='~/profile/tree'
 alias pdb='python -m pdb'
+
+alias la="\ls -GAl $COLOR"       # show hidden files
+alias lt="\ls -Gltc $COLOR"      # sort by change time
+alias lr="\ls -GlR $COLOR"       # recursive ls
+alias ls="\ls -GlhS $COLOR"      # sort by size
 
 [ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
 
