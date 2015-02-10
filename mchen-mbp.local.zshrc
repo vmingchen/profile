@@ -1,4 +1,1 @@
-alias la="\ls -GAl $COLOR"       # show hidden files
-alias lt="\ls -Gltc $COLOR"      # sort by change time
-alias lr="\ls -GlR $COLOR"       # recursive ls
-alias ls="\ls -GlhS $COLOR"      # sort by size
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/usr/local/Library/Canopy/User/bin:/opt/local/bin"
