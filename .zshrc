@@ -137,3 +137,7 @@ alias ls="\ls -GlhS $COLOR"      # sort by size
 DIRSTACKSIZE=8
 unsetopt autopushd
 #pushdminus pushdsilent pushdtohome
+
+export HISTIGNORE="&:[ ]*:@(?|??|???|????)"
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
