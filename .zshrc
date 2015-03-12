@@ -80,6 +80,8 @@ source $ZSH/oh-my-zsh.sh
 # use "set -o vi" to switch to vim, or just Ctrl-X Ctrl-E for editing in vim
 bindkey -e
 
+bindkey \^U backward-kill-line
+
 # disable auto title that will change the pane-name of tmux
 DISABLE_AUTO_TITLE=true
 
@@ -122,6 +124,13 @@ function ref() {
   cscope -b -R
 }
 
+function crm() {
+  for f in "$@"; do
+    rm "$f"
+    cvs remove "$f"
+  done
+}
+
 alias nt='netstat -vatn'
 alias scp='scp -o GSSAPIAuthentication=no'
 alias tree='~/profile/tree'
@@ -132,8 +141,6 @@ alias lt="\ls -Gltc $COLOR"      # sort by change time
 alias lr="\ls -GlR $COLOR"       # recursive ls
 alias ls="\ls -GlhS $COLOR"      # sort by size
 
-[ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
-
 DIRSTACKSIZE=8
 unsetopt autopushd
 #pushdminus pushdsilent pushdtohome
@@ -141,3 +148,5 @@ unsetopt autopushd
 export HISTIGNORE="&:[ ]*:@(?|??|???|????)"
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
+
+[ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
