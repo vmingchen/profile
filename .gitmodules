@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/pyflake8"]
 	path = .vim/bundle/pyflake8
 	url = https://github.com/nvie/vim-flake8.git
+[submodule ".vim/bundle/thrift"]
+	path = .vim/bundle/thrift
+	url = https://github.com/solarnz/thrift.vim.git
