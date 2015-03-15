@@ -16,6 +16,7 @@ function jabref() {
 
 # polar is using the coreutil ls instead of the Mac one
 MYCOLOR='--color=auto'
+alias l="\ls -Gl $MYCOLOR"         # long list
 alias la="\ls -GAl $MYCOLOR"       # show hidden files
 alias lt="\ls -Gltc $MYCOLOR"      # sort by change time
 alias lr="\ls -GlR $MYCOLOR"       # recursive ls

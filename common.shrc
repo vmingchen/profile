@@ -1,3 +1,5 @@
+# settings that are common between Mac and Linux, and between Bash and Zsh
+
 function myshowpath() {
 	local target="${1:-.}"
 	python -c "import os; print(os.path.abspath('${target}'))"

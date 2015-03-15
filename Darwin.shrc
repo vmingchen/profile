@@ -1,4 +1,4 @@
-# Mac specific settings
+# Mac specific settings that apply to both Bash and Zsh
 
 [[ -f ~/profile/common.sh ]] && source ~/profile/common.shrc
 
