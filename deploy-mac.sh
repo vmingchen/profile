@@ -14,12 +14,12 @@ unset -f unalias                        # make sure unalias is not a function
 ulimit -H -c 0 --                       # disable core dump
 hash -r                                 # clear the command path hash
 
-direction="${1:restore}"
+direction="${1:-restore}"
 
 KarabinerPrivate="${HOME}/Library/Application Support/Karabiner/private.xml"
 
 if [[ ${direction} == 'restore' ]]; then
-  cp karabiner-private.xml ${KarabinerPrivate}
+  cp karabiner-private.xml "${KarabinerPrivate}"
 elif [[ ${direction} == 'save' ]]; then
-  cp "KarabinerPrivate" karabiner-private.xml
+  cp "${KarabinerPrivate}" karabiner-private.xml
 fi
