@@ -34,19 +34,13 @@ function link_files()
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
 	.gitconfig .git-completion.bash .gitignore .gitaliases \
-	.screenrc .tmux.conf \
+	.screenrc .tmux.conf .zshrc \
 
 # install ssh config
 if [ -d ~/.ssh ]; then
 	cp ssh-config ~/.ssh/config
 	chmod 644 ~/.ssh/config
 fi
-#link_files `ls -A $prof`
 
-# load machine specific settings
-domain_name=`uname -n`
-if [ -f "${domain_name}.bashrc" ]; then
-	ln -s "$prof/${domain_name}.bashrc" "$HOME/.local_bashrc"
-fi
-
+# use google style for defalt code style
 ln -s "$prof/google.clang-format" .clang-format

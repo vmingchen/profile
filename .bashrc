@@ -58,9 +58,7 @@ xterm*|rxvt*)
 esac
 
 # enable color support
-COLOR=
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [[ $(uname -s) != 'Darwin' ]]; then
   COLOR=' --color=auto'
 fi
 
@@ -183,6 +181,8 @@ alias fb='pushd +2 > /dev/null; dirs -v'
 alias y='readlink -f'
 alias z='echo -e "`uname -n`\n`dirs -v`"'
 
+alias nt='netstat -vatn'
+
 #if type python26 >/dev/null 2>&1; then
   #alias python='python26'
 #fi
@@ -227,4 +227,4 @@ export AWKPATH=$AWKPATH:~/profile/awk
 export PATH=/usr/local/bin:$PATH
 
 # local bashrc overrides global bashrc
-[ -f ~/.local_bashrc ] && source ~/.local_bashrc
+[ -f ~/profile/$(uname -n).bashrc ] && source ~/profile/$(uname -n).bashrc
