@@ -1,9 +1,6 @@
 # Mac specific settings
 
-function myshowpath() {
-	local target="${1:-.}"
-	python -c "import os; print(os.path.abspath('${target}'))"
-}
+[[ -f ~/profile/common.sh ]] && source ~/profile/common.shrc
 
 # get full path of a file
 alias y='myshowpath'
@@ -12,6 +9,7 @@ alias y='myshowpath'
 export FIGNORE=DS_Store
 
 export CLICOLOR=1
+export CVS_RSH=ssh
 alias la="\ls -GAl"       # show hidden files
 alias lt="\ls -Gltc"      # sort by change time
 alias lr="\ls -GlR"       # recursive ls

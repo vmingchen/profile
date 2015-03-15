@@ -1,0 +1,4 @@
+function myshowpath() {
+	local target="${1:-.}"
+	python -c "import os; print(os.path.abspath('${target}'))"
+}

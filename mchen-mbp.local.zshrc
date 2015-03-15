@@ -16,4 +16,3 @@ function ro() {
 export FIGNORE=DS_Store
 
 export CVS_RSH=ssh
-export CLICOLOR=1
