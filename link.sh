@@ -25,9 +25,12 @@ function link_files()
         if [ "$i" = "link.sh" ]; then
             continue
         fi
-		if [ -e "$HOME/$i" ]; then
+		if [ -f "$HOME/$i" ]; then
 			mv "$HOME/$i" "$HOME/$i.bak"
 		fi
+    if [ -L "$HOME/$i" ]; then
+      rm "$HOME/$i"
+    fi
 		ln -s "$prof/$i" "$HOME/$i"
 	done
 }
@@ -43,4 +46,4 @@ if [ -d ~/.ssh ]; then
 fi
 
 # use google style for defalt code style
-ln -s "$prof/google.clang-format" .clang-format
+[ -f .clang-format ] || ln -s "$prof/google.clang-format" .clang-format

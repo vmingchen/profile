@@ -7,3 +7,12 @@ function myshowpath() {
 
 # get full path of a file
 alias y='myshowpath'
+
+# ignore .DS_Store file
+export FIGNORE=DS_Store
+
+export CLICOLOR=1
+alias la="\ls -GAl"       # show hidden files
+alias lt="\ls -Gltc"      # sort by change time
+alias lr="\ls -GlR"       # recursive ls
+alias ls="\ls -GlhS"      # sort by size

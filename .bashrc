@@ -57,11 +57,6 @@ xterm*|rxvt*)
   ;;
 esac
 
-# enable color support
-if [[ $(uname -s) != 'Darwin' ]]; then
-  COLOR=' --color=auto'
-fi
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
