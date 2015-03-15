@@ -10,7 +10,10 @@ export FIGNORE=DS_Store
 
 export CLICOLOR=1
 export CVS_RSH=ssh
+alias l="\ls -Gl"         # show long list
 alias la="\ls -GAl"       # show hidden files
 alias lt="\ls -Gltc"      # sort by change time
 alias lr="\ls -GlR"       # recursive ls
 alias ls="\ls -GlhS"      # sort by size
+
+# vim: filetype=sh
