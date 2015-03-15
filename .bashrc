@@ -177,8 +177,6 @@ alias fb='pushd +2 > /dev/null; dirs -v'
 # we do not further define fc to avoid conflict with bash builtin "fc"
 # use "f +3" instead.
 
-# get full path of a file
-alias y='readlink -f'
 alias z='echo -e "`uname -n`\n`dirs -v`"'
 
 alias nt='netstat -vatn'
@@ -226,5 +224,10 @@ export AWKPATH=$AWKPATH:~/profile/awk
 
 export PATH=/usr/local/bin:$PATH
 
-# local bashrc overrides global bashrc
+# OS-specific
+[ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
+[ -f ~/profile/$(uname -s).bashrc ] && source ~/profile/$(uname -s).bashrc
+
+# host-specific bashrc
+[ -f ~/profile/$(uname -n).shrc ] && source ~/profile/$(uname -n).shrc
 [ -f ~/profile/$(uname -n).bashrc ] && source ~/profile/$(uname -n).bashrc

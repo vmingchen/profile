@@ -1,0 +1,4 @@
+# Linux specific settings
+
+# get full path of a file
+alias y='readlink -f'

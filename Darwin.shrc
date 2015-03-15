@@ -1,0 +1,9 @@
+# Mac specific settings
+
+function myshowpath() {
+	local target="${1:-.}"
+	python -c "import os; print(os.path.abspath('${target}'))"
+}
+
+# get full path of a file
+alias y='myshowpath'

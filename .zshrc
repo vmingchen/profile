@@ -149,4 +149,10 @@ export HISTIGNORE="&:[ ]*:@(?|??|???|????)"
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
 
+# OS-specific
+[ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
+[ -f ~/profile/$(uname -s).zshrc ] && source ~/profile/$(uname -s).zshrc
+
+# Host-specific
+[ -f ~/profile/$(uname -n).shrc ] && source ~/profile/$(uname -n).shrc
 [ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
