@@ -285,3 +285,7 @@ set isfname=@,48-57,/,.,-,_,+,,,~
 set backspace=indent,eol,start
 
 set clipboard=unnamed
+
+" load OS-specific settings
+let s:osvimrc = '~/profile/' . substitute(system("uname"), '\n', '.vimrc', '')
+execute 'source ' . s:osvimrc
