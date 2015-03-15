@@ -24,3 +24,7 @@ as described at http://clang.llvm.org/docs/ClangFormat.html
     $ git clone git://github.com/brianchenming/profile.git
     $ cd profile
     $ ./link.sh
+
+# Supported Software
+Mac:
+    1. Karabiner: karabiner-private.xml
