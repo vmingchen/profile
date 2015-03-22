@@ -1,0 +1,4 @@
+export ZOOKEEPER=/opt/zookeeper-3.4.6
+export GOOGLE_TEST=/opt/gtest-1.7.0
+export GOOGLE_MOCK=/opt/gmock-1.7.0
+export BOOST_ROOT=/opt/boost_1_56_0

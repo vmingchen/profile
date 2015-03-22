@@ -72,11 +72,12 @@ map <leader>cd :cd %:p:h<cr>
 map <leader>vp `[v`]
 
 " Lookup in manual
-map <leader>mm :Man 
+map K :Man <cword><CR>
+map <leader>mm :Man <cword>
 " man page of System calls
-map <leader>ms :Man 2 
+map <leader>ms :Man 2 <cword>
 " man page of Library calls
-map <leader>ml :Man 3 
+map <leader>ml :Man 3 <cword>
 
 " Lookup symbol with Ack
 map <leader>a :tab split<CR>:Ack ""<Left>
@@ -288,4 +289,12 @@ set clipboard=unnamed
 
 " load OS-specific settings
 let s:osvimrc = '~/profile/' . substitute(system("uname"), '\n', '.vimrc', '')
-execute 'source ' . s:osvimrc
+if filereadable(glob(s:osvimrc))
+  execute 'source ' . s:osvimrc
+endif
+
+" load host-specific settings
+let s:hostvimrc = '~/profile/' . substitute(system("uname -n"), '\n', '.vimrc', '')
+if filereadable(glob(s:hostvimrc))
+  execute 'source ' . s:hostvimrc
+endif
