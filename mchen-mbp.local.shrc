@@ -11,3 +11,5 @@ function ro() {
 }
 
 export CVS_RSH=ssh
+
+export KURMA_HOME=/Users/mchen/Documents/nfs/fsl-nfs-ganesha
