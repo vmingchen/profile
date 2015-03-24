@@ -89,20 +89,6 @@ shopt -s histappend
 # default mode
 umask 002
 
-# mkdir and cd 
-function calc() { awk "BEGIN {print $* }"; }
-function gcd() { mkdir -p "$@" && eval cd "\"\$$#\"";}
-function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
-function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
-function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
-function max() { if [ $# -eq 0 ]; then mx; else echo "$@" | tr ' ' '\n' | mx; fi }
-function min() { if [ $# -eq 0 ]; then mn; else echo "$@" | tr ' ' '\n' | mn; fi }
-function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi }
-function errno() { grep -w $1 /usr/include/asm-generic/errno*.h ; }
-
-# include extract script
-[ -f ~/profile/e ] && source ~/profile/e
-
 # Select several lines from a file. 
 # e.g., sel /etc/passwd 2 4 6
 function sel() {
@@ -120,18 +106,6 @@ function sel() {
   eval "cat -n $target | sed $cmdexpr"
 }
 
-function crm() {
-  for f in "$@"; do
-    rm "$f"
-    cvs remove "$f"
-  done
-}
-
-function ref() {
-  ctags -R .
-  cscope -b -R
-}
-
 # alias
 alias grep="grep $COLOR"
 alias nau='nautilus'
@@ -141,10 +115,6 @@ alias lt="\ls -ltc $COLOR"     # sort by change time
 alias lx="\ls -lXB $COLOR"      # sort by extension
 alias lr="\ls -lR $COLOR"       # recursive ls
 alias ls="\ls -lhS $COLOR"      # sort by size
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 
 # tmux preferred if exist
 if type tmux >/dev/null 2>&1; then
@@ -156,25 +126,6 @@ else
   alias s='screen'
   alias r='screen -D -R'
 fi
-
-alias h='history' 
-alias p='ps -ef'
-alias f='pushd'
-alias b='popd'
-alias v='dirs -v'
-alias x='exit'
-alias j='jobs'
-alias n="opennote"
-alias i="ipython"
-alias o="open"
-alias fa='pushd +1 > /dev/null; dirs -v'
-alias fb='pushd +2 > /dev/null; dirs -v'
-# we do not further define fc to avoid conflict with bash builtin "fc"
-# use "f +3" instead.
-
-alias z='echo -e "`uname -n`\n`dirs -v`"'
-
-alias nt='netstat -vatn'
 
 #if type python26 >/dev/null 2>&1; then
   #alias python='python26'
@@ -218,6 +169,9 @@ alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 export AWKPATH=$AWKPATH:~/profile/awk
 
 export PATH=/usr/local/bin:$PATH
+
+[ -f ~/profile/alias.shrc ] && source ~/profile/alias.shrc
+[ -f ~/profile/functions.shrc ] && source ~/profile/functions.shrc
 
 # OS-specific
 [ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
