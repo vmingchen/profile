@@ -101,6 +101,8 @@ setopt HIST_IGNORE_ALL_DUPS
 [ -f ~/profile/alias.shrc ] && source ~/profile/alias.shrc
 [ -f ~/profile/functions.shrc ] && source ~/profile/functions.shrc
 
+compdef vman="man"
+
 # OS-specific
 [ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
 [ -f ~/profile/$(uname -s).zshrc ] && source ~/profile/$(uname -s).zshrc

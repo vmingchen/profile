@@ -170,6 +170,8 @@ export AWKPATH=$AWKPATH:~/profile/awk
 
 export PATH=/usr/local/bin:$PATH
 
+complete -o default -o nospace -F _man vman
+
 [ -f ~/profile/alias.shrc ] && source ~/profile/alias.shrc
 [ -f ~/profile/functions.shrc ] && source ~/profile/functions.shrc
 
