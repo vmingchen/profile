@@ -166,9 +166,13 @@ map <F9> :set cinoptions=>8,(0,:0
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
-autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldmethod=syntax
-autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldminlines=5
-autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldlevel=3
+au BufRead,BufNewFile *.py set filetype=python
+autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldminlines=5
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldlevel=3
 
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
 autocmd FileType c set cinoptions=>8,(0,:0
@@ -178,8 +182,6 @@ autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType sh set iskeyword-=.  " stop at . for word motions like w, e
-autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType markdown set tabstop=2|set shiftwidth=2|set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

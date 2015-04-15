@@ -114,6 +114,10 @@ alias nt='netstat -vatn'
 # we do not further define fc to avoid conflict with bash builtin "fc"
 # use "f +3" instead.
 
+alias f1='fg %1'
+alias f2='fg %2'
+alias f3='fg %3'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
