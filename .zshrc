@@ -90,6 +90,10 @@ alias scp='scp -o GSSAPIAuthentication=no'
 alias tree='~/profile/tree'
 alias pdb='python -m pdb'
 
+alias f1='fg %1'
+alias f2='fg %2'
+alias f3='fg %3'
+
 DIRSTACKSIZE=8
 unsetopt autopushd
 #pushdminus pushdsilent pushdtohome
