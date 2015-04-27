@@ -85,11 +85,6 @@ bindkey \^U backward-kill-line
 # disable auto title that will change the pane-name of tmux
 DISABLE_AUTO_TITLE=true
 
-alias nt='netstat -vatn'
-alias scp='scp -o GSSAPIAuthentication=no'
-alias tree='~/profile/tree'
-alias pdb='python -m pdb'
-
 alias f1='fg %1'
 alias f2='fg %2'
 alias f3='fg %3'
@@ -102,10 +97,10 @@ export HISTIGNORE="&:[ ]*:@(?|??|???|????)"
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
 
+compdef vman="man"
+
 [ -f ~/profile/alias.shrc ] && source ~/profile/alias.shrc
 [ -f ~/profile/functions.shrc ] && source ~/profile/functions.shrc
-
-compdef vman="man"
 
 # OS-specific
 [ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc

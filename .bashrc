@@ -133,10 +133,8 @@ fi
 if libtool --version >/dev/null 2>&1; then
   alias gdb='libtool --mode=execute gdb'
 fi
-alias pdb='python -m pdb'
 alias ymd='date +%y%m%d'
 alias smth='luit -encoding gbk telnet bbs.newsmth.net'
-alias tree='~/profile/tree'
 
 # options
 #set -u  # do not expand undefined variable to null, report error instead
@@ -150,7 +148,6 @@ export HADOOP_HOME=/home/chm/hadoop
 alias ghadoop='luit -encoding gbk ssh -o GSSAPIAuthentication=no ime@10.12.11.200'
 alias gdev='luit -encoding gbk ssh -o GSSAPIAuthentication=no chenming@10.11.203.218'
 alias gdd='luit -encoding gbk ssh -o GSSAPIAuthentication=no root@10.10.65.76'
-alias scp='scp -o GSSAPIAuthentication=no'
 
 # settings
 export EDITOR=vim
@@ -169,6 +166,10 @@ alias chev='ssh -tt mchen@msl.cewit.stonybrook.edu ssh -tt mchen@chevron8'
 export AWKPATH=$AWKPATH:~/profile/awk
 
 export PATH=/usr/local/bin:$PATH
+
+alias f1='fg 1'
+alias f2='fg 2'
+alias f3='fg 3'
 
 complete -o default -o nospace -F _man vman
 

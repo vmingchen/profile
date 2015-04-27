@@ -15,6 +15,10 @@ alias nt='netstat -vatn'
 # we do not further define fc to avoid conflict with bash builtin "fc"
 # use "f +3" instead.
 
+alias pdb='python -m pdb'
+alias tree='~/profile/tree'
+alias scp='scp -o GSSAPIAuthentication=no'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
