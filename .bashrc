@@ -173,13 +173,7 @@ alias f3='fg 3'
 
 complete -o default -o nospace -F _man vman
 
-[ -f ~/profile/alias.shrc ] && source ~/profile/alias.shrc
-[ -f ~/profile/functions.shrc ] && source ~/profile/functions.shrc
-
-# OS-specific
-[ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
-[ -f ~/profile/$(uname -s).bashrc ] && source ~/profile/$(uname -s).bashrc
-
-# host-specific bashrc
-[ -f ~/profile/$(uname -n).shrc ] && source ~/profile/$(uname -n).shrc
-[ -f ~/profile/$(uname -n).bashrc ] && source ~/profile/$(uname -n).bashrc
+if [ -f ~/profile/functions.shrc ]; then
+  source ~/profile/functions.shrc
+  source_files
+fi

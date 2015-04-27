@@ -99,13 +99,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 compdef vman="man"
 
-[ -f ~/profile/alias.shrc ] && source ~/profile/alias.shrc
-[ -f ~/profile/functions.shrc ] && source ~/profile/functions.shrc
-
-# OS-specific
-[ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
-[ -f ~/profile/$(uname -s).zshrc ] && source ~/profile/$(uname -s).zshrc
-
-# Host-specific
-[ -f ~/profile/$(uname -n).shrc ] && source ~/profile/$(uname -n).shrc
-[ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
+if [ -f ~/profile/functions.shrc ]; then
+  source ~/profile/functions.shrc
+  source_files
+fi

@@ -65,12 +65,32 @@ function e() {
   done
 }
 
-vman() {
+function vman() {
   vim -c "SuperMan $*"
 
   if [ "$?" != "0" ]; then
     echo "No manual entry for $*"
   fi
+}
+
+function mysource() {
+  for source_file in "$@"; do
+    [ -f "$source_file" ] && source "$source_file"
+  done
+}
+
+function source_files() {
+  local RC="$(basename $SHELL)rc"
+
+  mysource ~/profile/alias.shrc
+
+  # OS-specific
+  mysource ~/profile/$(uname -s).shrc
+  mysource ~/profile/$(uname -s).${RC}
+
+  # host-specific bashrc
+  mysource ~/profile/$(uname -n).shrc
+  mysource ~/profile/$(uname -n).${RC}
 }
 
 # :vim filetype=sh:sw=2:ts=2:et
