@@ -85,56 +85,9 @@ bindkey \^U backward-kill-line
 # disable auto title that will change the pane-name of tmux
 DISABLE_AUTO_TITLE=true
 
-function calc() { awk "BEGIN {print $* }"; }
-function gcd() { mkdir -p "$@" && eval cd "\"\$$#\"";}
-function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
-function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
-function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
-function max() { if [ $# -eq 0 ]; then mx; else echo "$@" | tr ' ' '\n' | mx; fi }
-function min() { if [ $# -eq 0 ]; then mn; else echo "$@" | tr ' ' '\n' | mn; fi }
-function sum() { if [ $# -eq 0 ]; then sm; else echo "$@" | tr ' ' '\n' | sm; fi }
-function errno() { grep -w $1 /usr/include/asm-generic/errno*.h ; }
-
-[ -f ~/profile/e ] && source ~/profile/e
-
-alias h='history' 
-alias p='ps -ef'
-alias f='pushd'
-alias b='popd'
-alias v='dirs -v'
-alias x='exit'
-alias j='jobs'
-alias n="opennote"
-alias i="ipython"
-alias o="open"
-alias fa='pushd +1 > /dev/null; dirs -v'
-alias fb='pushd +2 > /dev/null; dirs -v'
-alias z='echo -e "`uname -n`\n`dirs -v`"'
-alias nt='netstat -vatn'
-# we do not further define fc to avoid conflict with bash builtin "fc"
-# use "f +3" instead.
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-
-function ref() {
-  ctags -R .
-  cscope -b -R
-}
-
-function crm() {
-  for f in "$@"; do
-    rm "$f"
-    cvs remove "$f"
-  done
-}
-
-alias nt='netstat -vatn'
-alias scp='scp -o GSSAPIAuthentication=no'
-alias tree='~/profile/tree'
-alias pdb='python -m pdb'
+alias f1='fg %1'
+alias f2='fg %2'
+alias f3='fg %3'
 
 DIRSTACKSIZE=8
 unsetopt autopushd
@@ -144,10 +97,9 @@ export HISTIGNORE="&:[ ]*:@(?|??|???|????)"
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
 
-# OS-specific
-[ -f ~/profile/$(uname -s).shrc ] && source ~/profile/$(uname -s).shrc
-[ -f ~/profile/$(uname -s).zshrc ] && source ~/profile/$(uname -s).zshrc
+compdef vman="man"
 
-# Host-specific
-[ -f ~/profile/$(uname -n).shrc ] && source ~/profile/$(uname -n).shrc
-[ -f ~/profile/$(uname -n).zshrc ] && source ~/profile/$(uname -n).zshrc
+if [ -f ~/profile/functions.shrc ]; then
+  source ~/profile/functions.shrc
+  source_files
+fi

@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/thrift"]
 	path = .vim/bundle/thrift
 	url = https://github.com/solarnz/thrift.vim.git
+[submodule ".vim/bundle/vim-superman"]
+	path = .vim/bundle/vim-superman
+	url = https://github.com/jez/vim-superman
