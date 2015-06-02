@@ -1,6 +1,6 @@
 # Mac specific settings that apply to both Bash and Zsh
 
-[[ -f ~/profile/common.sh ]] && source ~/profile/common.shrc
+[[ -f ~/profile/common.shrc ]] && source ~/profile/common.shrc
 
 # get full path of a file
 alias y='myshowpath'
