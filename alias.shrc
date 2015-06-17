@@ -1,0 +1,22 @@
+alias h='history' 
+alias p='ps -ef'
+alias f='pushd'
+alias b='popd'
+alias v='dirs -v'
+alias x='exit'
+alias j='jobs'
+alias n="opennote"
+alias i="ipython"
+alias o="open"
+alias fa='pushd +1 > /dev/null; dirs -v'
+alias fb='pushd +2 > /dev/null; dirs -v'
+alias z='echo -e "`uname -n`\n`dirs -v`"'
+alias nt='netstat -vatn'
+# we do not further define fc to avoid conflict with bash builtin "fc"
+# use "f +3" instead.
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+

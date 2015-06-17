@@ -39,6 +39,9 @@ link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
 	.gitconfig .git-completion.bash .gitignore .gitaliases \
 	.screenrc .tmux.conf .zshrc \
 
+ln -s "$prof/.vimrc" ~/.nvimrc
+ln -s "$prof/.vim" ~/.nvim
+
 # install ssh config
 if [ -d ~/.ssh ]; then
 	cp ssh-config ~/.ssh/config
