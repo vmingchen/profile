@@ -3,3 +3,5 @@
 *.cmd
 *.swp
 *.pyc
+cscope.out
+tags
