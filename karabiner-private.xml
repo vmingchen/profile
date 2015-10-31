@@ -12,11 +12,15 @@
                 <appname>NewEclipse</appname>
                 <equal>epp.package.java</equal>
         </appdef>
+        <appdef>
+                <appname>Atom</appname>
+                <equal>com.github.atom</equal>
+        </appdef>
 
         <item>
                 <name>Vim Key Remapping in Eclipse</name>
                 <identifier>private.vim_keys_eclipse</identifier>
-                <only>Eclipse, MacVim, NewEclipse</only>
+                <only>Eclipse, MacVim, NewEclipse, Atom</only>
                 <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CONTROL_R</autogen>
                 <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
         </item>
