@@ -1,7 +1,16 @@
 alias vming v.mingchen@gmail.com
 alias mchen mchen@cs.stonybrook.edu
 alias nfsgd	nfs-ganesha-devel@lists.sourceforge.net
+alias souj soshankarana@cs.stonybrook.edu
+alias bharat bharat.singh.1@stonybrook.edu
+alias trond trond.myklebust@primarydata.com
+alias bfield bfields@fieldses.org
+alias ganesha	nfs-ganesha-devel@lists.sourceforge.net
+alias fsdevel linux-fsdevel@vger.kernel.org
+alias nfs linux-nfs@vger.kernel.org
 alias maxm makc@gmx.co.uk
 alias phil philippe.deniel@cea.fr
 alias matt matt@linuxbox.com
 alias jiml jlieb@panasas.com
+alias ezk ezk@fsl.cs.stonybrook.edu
+alias vass sectorsize512@gmail.com

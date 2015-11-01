@@ -25,28 +25,25 @@ function link_files()
         if [ "$i" = "link.sh" ]; then
             continue
         fi
-		if [ -e "$HOME/$i" ]; then
+		if [ -f "$HOME/$i" ]; then
 			mv "$HOME/$i" "$HOME/$i.bak"
 		fi
+    if [ -L "$HOME/$i" ]; then
+      rm "$HOME/$i"
+    fi
 		ln -s "$prof/$i" "$HOME/$i"
 	done
 }
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
 	.gitconfig .git-completion.bash .gitignore .gitaliases \
-	.screenrc .tmux.conf \
+	.screenrc .tmux.conf .zshrc .zshenv \
 
 # install ssh config
 if [ -d ~/.ssh ]; then
 	cp ssh-config ~/.ssh/config
 	chmod 644 ~/.ssh/config
 fi
-#link_files `ls -A $prof`
 
-# load machine specific settings
-domain_name=`uname -n`
-if [ -f "${domain_name}.bashrc" ]; then
-	ln -s "$prof/${domain_name}.bashrc" "$HOME/.local_bashrc"
-fi
-
-ln -s "$prof/google.clang-format" .clang-format
+# use google style for defalt code style
+[ -f .clang-format ] || ln -s "$prof/google.clang-format" .clang-format

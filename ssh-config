@@ -2,9 +2,6 @@ Host cross
 HostName crossroads.fsl.cs.sunysb.edu
 User mchen
 ForwardX11 yes
-LocalForward 9000 130.245.177.17:443
-LocalForward 9001 130.245.177.17:80
-LocalForward 9002 130.245.126.203:8443
 DynamicForward 9999
 
 Host dolphin

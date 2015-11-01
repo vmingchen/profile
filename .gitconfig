@@ -8,6 +8,7 @@
 	ui = auto
 [core]
 	editor = vim
+	excludesfile = /home/mchen/.gitignore_global
 [merge]
 	tool = vimdiff
 [alias]
@@ -27,3 +28,9 @@
 
 [push]
 	default = matching
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -1,0 +1,27 @@
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
+# add software installed by Erez
+export PATH=/opt/local/libexec/gnubin:/opt/local/bin:$PATH
+
+# add home brew
+export PATH=$HOME/mac/homebrew/bin:$PATH
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+function jabref() {
+  nohup java -jar /home/mchen/mac/bin/JabRef-2.10.jar 1>/dev/null 2>&1 &
+}
+
+# polar is using the coreutil ls instead of the Mac one
+MYCOLOR='--color=auto'
+alias l="\ls -Gl $MYCOLOR"         # long list
+alias la="\ls -GAl $MYCOLOR"       # show hidden files
+alias lt="\ls -Gltc $MYCOLOR"      # sort by change time
+alias lr="\ls -GlR $MYCOLOR"       # recursive ls
+alias ls="\ls -GlhS $MYCOLOR"      # sort by size
+
+export KURMA_HOME=/home/mchen/git/fsl-nfs-ganesha
+
+# vim: filetype=sh

@@ -72,7 +72,8 @@ map <leader>cd :cd %:p:h<cr>
 map <leader>vp `[v`]
 
 " Lookup in manual
-map <leader>mm :Man 
+map K :Man <cword><CR>
+map <leader>mm :Man <cword>
 " man page of System calls
 map <leader>ms :Man 2 <C-r><C-w><CR>
 " man page of Library calls
@@ -126,9 +127,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-map <leader>t2 :set shiftwidth=2 tabstop=2 expandtab<cr>
-map <leader>t4 :set shiftwidth=4 tabstop=4 expandtab<cr>
-map <leader>t8 :set shiftwidth=8 tabstop=8 noexpandtab<cr>
+map <leader>t2 :set shiftwidth=2 tabstop=2 softtabstop=2 expandtab<cr>
+map <leader>t4 :set shiftwidth=4 tabstop=4 softtabstop=4 expandtab<cr>
+map <leader>t8 :set shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab<cr>
 
 set smarttab
 set lbr
@@ -185,7 +186,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "My information
-iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
+iab xdate <c-r>=strftime("%Y-%m-%d")<cr>
+iab xtime <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
 iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
 
@@ -280,4 +282,19 @@ autocmd BufRead * DetectIndent
 " use only simple char in path
 set isfname=@,48-57,/,.,-,_,+,,,~
 
+" make sure Ctrl-W can delete previous words not just inserted
 set backspace=indent,eol,start
+
+set clipboard=unnamed
+
+" load OS-specific settings
+let s:osvimrc = '~/profile/' . substitute(system("uname"), '\n', '.vimrc', '')
+if filereadable(glob(s:osvimrc))
+  execute 'source ' . s:osvimrc
+endif
+
+" load host-specific settings
+let s:hostvimrc = '~/profile/' . substitute(system("uname -n"), '\n', '.vimrc', '')
+if filereadable(glob(s:hostvimrc))
+  execute 'source ' . s:hostvimrc
+endif
