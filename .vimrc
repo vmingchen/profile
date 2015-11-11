@@ -83,9 +83,9 @@ map <leader>vp `[v`]
 map K :Man <cword><CR>
 map <leader>mm :Man <cword>
 " man page of System calls
-map <leader>ms :Man 2 <cword>
+map <leader>ms :Man 2 <C-r><C-w><CR>
 " man page of Library calls
-map <leader>ml :Man 3 <cword>
+map <leader>ml :Man 3 <C-r><C-w><CR>
 
 " Lookup symbol with Ack
 map <leader>a :tab split<CR>:Ack ""<Left>
@@ -118,7 +118,7 @@ map <leader>c :Tlist<cr>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " search using grep and show results in Quickfix
-map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
+map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "<cword>" .<Left><Left><Left>
 
 " open NERDTree window
 map <leader>tt :NERDTreeToggle<cr>

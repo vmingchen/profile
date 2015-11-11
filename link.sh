@@ -37,7 +37,7 @@ function link_files()
 
 link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
 	.gitconfig .git-completion.bash .gitignore .gitaliases \
-	.screenrc .tmux.conf .zshrc \
+	.screenrc .tmux.conf .zshrc .zshenv \
 
 ln -s "$prof/.vimrc" ~/.nvimrc
 ln -s "$prof/.vim" ~/.nvim
