@@ -13,3 +13,7 @@ function ro() {
 export CVS_RSH=ssh
 
 export KURMA_HOME=/Users/mchen/Documents/nfs/fsl-nfs-ganesha
+
+# Bazel
+export PATH=/Users/mchen/.bazel/bin:$PATH
+source /Users/mchen/.bazel/lib/bazel/bin/bazel-complete.bash

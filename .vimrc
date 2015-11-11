@@ -205,6 +205,7 @@ iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
 " For Tex
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tex_flavor='latex'
+autocmd FileType tex set makeprg=make\ pdf
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For XML
