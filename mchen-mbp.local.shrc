@@ -1,4 +1,8 @@
-export PATH=/usr/local/Library/Canopy/User/bin:$PATH:/usr/texbin:/opt/local/bin:/opt/X11/bin
+export PATH=/usr/local/Library/Canopy/User/bin:$PATH:/opt/local/bin:/opt/X11/bin
+
+#latex
+#http://tex.stackexchange.com/questions/249966/install-latex-on-mac-os-x-el-capitan-10-11
+export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
 
 function jabref() {
   nohup java -jar /Applications/JabRef.app/Contents/Resources/Java/JabRef-2.10.jar 1>/dev/null 2>&1 &
