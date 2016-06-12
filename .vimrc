@@ -15,11 +15,11 @@ execute pathogen#infect()
 
 " Vundle: https://github.com/gmarik/Vundle.vim
 " set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 " let Vundle manage Vundle, required
-"Plugin 'gmarik/Vundle.vim'
-"Plugin 'floobits/floobits-neovim'
+" Plugin 'gmarik/Vundle.vim'
+" Plugin 'floobits/floobits-neovim'
 
 " turn backup off
 set nobackup
