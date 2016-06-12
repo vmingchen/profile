@@ -15,11 +15,11 @@ execute pathogen#infect()
 
 " Vundle: https://github.com/gmarik/Vundle.vim
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'floobits/floobits-neovim'
+"Plugin 'gmarik/Vundle.vim'
+"Plugin 'floobits/floobits-neovim'
 
 " turn backup off
 set nobackup
@@ -88,7 +88,7 @@ map <leader>ms :Man 2 <C-r><C-w><CR>
 map <leader>ml :Man 3 <C-r><C-w><CR>
 
 " Lookup symbol with Ack
-map <leader>a :tab split<CR>:Ack ""<Left>
+map <leader>a :tab split<CR>:Ack ""<Left><Left><Left>
 map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Open a buffer as scratch board
@@ -118,7 +118,7 @@ map <leader>c :Tlist<cr>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " search using grep and show results in Quickfix
-map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "<cword>" .<Left><Left><Left>
+map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left>
 
 " open NERDTree window
 map <leader>tt :NERDTreeToggle<cr>

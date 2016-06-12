@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/vim-superman"]
 	path = .vim/bundle/vim-superman
 	url = https://github.com/jez/vim-superman
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
