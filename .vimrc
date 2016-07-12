@@ -118,7 +118,16 @@ map <leader>c :Tlist<cr>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " search using grep and show results in Quickfix
-map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "<cword>" .<Left><Left><Left>
+function Mygrep(word)
+	let l:keyword = a:word
+	if empty(l:keyword) == 1
+		let l:keyword = expand("<cword>")
+	endif
+	echom 'grep -R --include=\*.{py,c,h,cc,cpp,sh} "' . l:keyword . '" .'
+	execute('grep -R --include=\*.{py,c,h,cc,cpp,sh} "' . l:keyword . '" .')
+endfunction
+map <leader>g :call Mygrep("")<Left><Left>
+"map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "" .<Left><Left><Left>
 
 " open NERDTree window
 map <leader>tt :NERDTreeToggle<cr>
