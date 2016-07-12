@@ -88,7 +88,7 @@ map <leader>ms :Man 2 <C-r><C-w><CR>
 map <leader>ml :Man 3 <C-r><C-w><CR>
 
 " Lookup symbol with Ack
-map <leader>a :tab split<CR>:Ack ""<Left>
+map <leader>a :tab split<CR>:Ack ""<Left><Left><Left>
 map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Open a buffer as scratch board
