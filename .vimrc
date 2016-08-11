@@ -1,9 +1,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" scheme, other cool colorscheme: wombat
-colorscheme desert
-
 " enable plugins
 syntax on
 filetype on
@@ -318,3 +315,7 @@ let s:hostvimrc = '~/profile/' . substitute(system("uname -n"), '\n', '.vimrc', 
 if filereadable(glob(s:hostvimrc))
   execute 'source ' . s:hostvimrc
 endif
+
+" scheme, other cool colorscheme: wombat
+colorscheme delek
+highlight search ctermfg=black ctermbg=white
