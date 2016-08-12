@@ -35,4 +35,8 @@ endfunction
 let pyindent_nested_paren="&sw*2"
 let pyindent_open_paren="&sw*2"
 
+
 setlocal foldmethod=indent
+
+map <C-K> :FormatLines<CR>
+imap <C-K> <ESC>:FormatLines<CR>i
