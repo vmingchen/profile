@@ -203,6 +203,9 @@ autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldminlines=5
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldlevel=3
 
+autocmd FileType gp setl textwidth=200
+autocmd FileType gp set makeprg=gnuplot\ %
+
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
 autocmd FileType c set cinoptions=>8,(0,:0
 "autocmd FileType cc,cpp set expandtab|set tabstop=2|set shiftwidth=2
@@ -331,6 +334,11 @@ if filereadable(glob(s:hostvimrc))
   execute 'source ' . s:hostvimrc
 endif
 
+if $TMUX != ''
+  set clipboard="
+endif
+
 " scheme, other cool colorscheme: wombat
-colorscheme delek
+"colorscheme delek
+colorscheme desert
 highlight search ctermfg=black ctermbg=white
