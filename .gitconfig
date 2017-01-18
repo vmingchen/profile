@@ -18,6 +18,7 @@
 	undo = reset --soft 'HEAD^'
 	ap = add -p  # choose parts of the change to stage
 	df = diff --name-only
+	dc = diff --cached
 
 [sendemail]
 	smtpencryption = tls
