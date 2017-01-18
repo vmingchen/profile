@@ -195,6 +195,8 @@ map <F9> :set cinoptions=>8,(0,:0
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
+autocmd FileType gp setl textwidth=200
+
 au BufRead,BufNewFile *.py set filetype=python
 autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
