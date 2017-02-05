@@ -203,6 +203,8 @@ autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldminlines=5
 autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldlevel=3
 
+autocmd FileType tex setl indentexpr=none
+
 autocmd FileType gp setl textwidth=200
 autocmd FileType gp set makeprg=gnuplot\ %
 
