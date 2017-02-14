@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-signature"]
 	path = .vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
+[submodule "ale-vim-syntax-checker"]
+	path = .vim/bundle/ale
+	url = https://github.com/w0rp/ale.git
