@@ -1,8 +1,28 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
 
-" scheme, other cool colorscheme: wombat
-colorscheme desert
+" Vundle: https://github.com/gmarik/Vundle.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+" Plugin 'gmarik/Vundle.vim'
+" Plugin 'floobits/floobits-neovim'
+
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plugin 'google/vim-glaive'
+" ...
+call vundle#end()
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+"Glaive codefmt plugin[mappings]
 
 " enable plugins
 syntax on
@@ -72,14 +92,15 @@ map <leader>cd :cd %:p:h<cr>
 map <leader>vp `[v`]
 
 " Lookup in manual
-map <leader>mm :Man 
+map K :Man <cword><CR>
+map <leader>mm :Man <cword>
 " man page of System calls
 map <leader>ms :Man 2 <C-r><C-w><CR>
 " man page of Library calls
 map <leader>ml :Man 3 <C-r><C-w><CR>
 
 " Lookup symbol with Ack
-map <leader>a :tab split<CR>:Ack ""<Left>
+map <leader>a :tab split<CR>:Ack ""<Left><Left><Left>
 map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Open a buffer as scratch board
@@ -109,7 +130,15 @@ map <leader>c :Tlist<cr>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " search using grep and show results in Quickfix
-map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "<cword>" .<Left><Left><Left>
+"map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "<cword>" .<Left><Left><Left>
+function Mygrep(word)
+	let l:keyword = a:word
+	if empty(l:keyword) == 1
+		let l:keyword = expand("<cword>")
+	endif
+	echom 'grep -R --include=\*.{py,c,h,cc,cpp,sh} "' . l:keyword . '" .'
+	execute('grep -R --include=\*.{py,c,h,cc,cpp,sh} "' . l:keyword . '" .')
+endfunction
 
 " open NERDTree window
 map <leader>tt :NERDTreeToggle<cr>
@@ -126,9 +155,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-map <leader>t2 :set shiftwidth=2 tabstop=2 expandtab<cr>
-map <leader>t4 :set shiftwidth=4 tabstop=4 expandtab<cr>
-map <leader>t8 :set shiftwidth=8 tabstop=8 noexpandtab<cr>
+map <leader>t2 :set shiftwidth=2 tabstop=2 softtabstop=2 expandtab<cr>
+map <leader>t4 :set shiftwidth=4 tabstop=4 softtabstop=4 expandtab<cr>
+map <leader>t8 :set shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab<cr>
 
 set smarttab
 set lbr
@@ -165,9 +194,20 @@ map <F9> :set cinoptions=>8,(0,:0
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.mkd set filetype=markdown
 
-autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldmethod=syntax
-autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldminlines=5
-autocmd FileType c,cpp,h,java,py,sh,tex,html,ml setl foldlevel=3
+autocmd FileType gp setl textwidth=200
+
+au BufRead,BufNewFile *.py set filetype=python
+autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldmethod=syntax
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldminlines=5
+autocmd FileType c,cpp,h,java,sh,tex,html,ml setl foldlevel=3
+
+autocmd FileType tex setl indentexpr=none
+
+autocmd FileType gp setl textwidth=200
+autocmd FileType gp set makeprg=gnuplot\ %
 
 autocmd FileType c set noexpandtab|set tabstop=8|set shiftwidth=8
 autocmd FileType c set cinoptions=>8,(0,:0
@@ -177,15 +217,14 @@ autocmd FileType tex set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vim set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType sh set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType sh set iskeyword-=.  " stop at . for word motions like w, e
-autocmd FileType python set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType markdown set tabstop=2|set shiftwidth=2|set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "My information
-iab xdate <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
+iab xdate <c-r>=strftime("%Y-%m-%d")<cr>
+iab xtime <c-r>=strftime("%y-%m-%d %H:%M:%S")<cr>
 iab xname Ming Chen
 iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
 
@@ -193,6 +232,7 @@ iab xchange <c-r>=strftime("%Y-%m-%d")<cr>  Ming Chen  <v.mingchen@gmail.com>
 " For Tex
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tex_flavor='latex'
+autocmd FileType tex set makeprg=make\ pdf
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For XML
@@ -280,4 +320,28 @@ autocmd BufRead * DetectIndent
 " use only simple char in path
 set isfname=@,48-57,/,.,-,_,+,,,~
 
+" make sure Ctrl-W can delete previous words not just inserted
 set backspace=indent,eol,start
+
+set clipboard=unnamed
+
+" load OS-specific settings
+let s:osvimrc = '~/profile/' . substitute(system("uname"), '\n', '.vimrc', '')
+if filereadable(glob(s:osvimrc))
+  execute 'source ' . s:osvimrc
+endif
+
+" load host-specific settings
+let s:hostvimrc = '~/profile/' . substitute(system("uname -n"), '\n', '.vimrc', '')
+if filereadable(glob(s:hostvimrc))
+  execute 'source ' . s:hostvimrc
+endif
+
+if $TMUX != ''
+  set clipboard="
+endif
+
+" scheme, other cool colorscheme: wombat
+"colorscheme delek
+colorscheme desert
+highlight search ctermfg=black ctermbg=white

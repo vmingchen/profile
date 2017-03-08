@@ -1,0 +1,21 @@
+# Mac specific settings that apply to both Bash and Zsh
+
+[[ -f ~/profile/common.shrc ]] && source ~/profile/common.shrc
+
+# get full path of a file
+alias y='myshowpath'
+
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
+# ignore .DS_Store file
+export FIGNORE=DS_Store
+
+export CLICOLOR=1
+export CVS_RSH=ssh
+alias l="\ls -Gl"         # show long list
+alias la="\ls -GAl"       # show hidden files
+alias lt="\ls -Gltc"      # sort by change time
+alias lr="\ls -GlR"       # recursive ls
+alias ls="\ls -GlhS"      # sort by size
+
+# vim: filetype=sh

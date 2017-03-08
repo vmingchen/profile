@@ -1,0 +1,15 @@
+# Linux specific settings
+
+[[ -f ~/profile/common.sh ]] && source ~/profile/common.shrc
+
+# get full path of a file
+alias y='readlink -f'
+
+MYCOLOR='--color=auto'
+alias l="\ls -Gl $MYCOLOR"         # show long list
+alias la="\ls -GAl $MYCOLOR"       # show hidden files
+alias lt="\ls -Gltc $MYCOLOR"      # sort by change time
+alias lr="\ls -GlR $MYCOLOR"       # recursive ls
+alias ls="\ls -GlhS $MYCOLOR"      # sort by size
+
+# vim: filetype=sh
