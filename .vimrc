@@ -346,3 +346,8 @@ endif
 "colorscheme delek
 colorscheme desert
 highlight search ctermfg=black ctermbg=white
+
+" highlight lines longer than 80
+" From Damian Conway's "More Instantly Better Vim"
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
