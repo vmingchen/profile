@@ -17,6 +17,7 @@ IFS=$' \t\n'                            # Reset IFS
 unset -f unalias                        # Make sure unalias is not a function
 \unalias -a                             # Unset all aliases
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 prof="$HOME/profile"
 
 function link_files()
@@ -51,3 +52,9 @@ fi
 
 # use google style for defalt code style
 [ -f .clang-format ] || ln -s "$prof/google.clang-format" .clang-format
+
+# install YouCompleteMe
+#cd $prof
+#git submodule update --init --recursive
+#cd .vim/bundle/YouCompleteMe
+#./install.sh
