@@ -23,4 +23,6 @@
 
 (global-font-lock-mode t)
 
+(normal-erase-is-backspace-mode 1)
+
 (put 'upcase-region 'disabled nil)

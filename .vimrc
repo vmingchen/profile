@@ -351,3 +351,6 @@ highlight search ctermfg=black ctermbg=white
 " From Damian Conway's "More Instantly Better Vim"
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+
+highlight Folded ctermbg=255
+highlight Folded ctermfg=220

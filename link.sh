@@ -35,7 +35,7 @@ function link_files()
 	done
 }
 
-link_files .vimrc .vim .bashrc .emacs .gdb .gdbinit \
+link_files .vimrc .vim .bashrc .spacemacs .gdb .gdbinit \
 	.gitconfig .git-completion.bash .gitignore .gitaliases \
 	.screenrc .tmux.conf .zshrc .zshenv .ackrc .pylintrc .style.yapf \
 	.tmux
