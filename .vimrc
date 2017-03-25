@@ -343,14 +343,12 @@ if $TMUX != ''
 endif
 
 " scheme, other cool colorscheme: wombat
-"colorscheme delek
-colorscheme desert
-highlight search ctermfg=black ctermbg=white
+colorscheme default
 
 " highlight lines longer than 80
 " From Damian Conway's "More Instantly Better Vim"
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%82v', 100)
 
 highlight Folded ctermbg=255
 highlight Folded ctermfg=220
