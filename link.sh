@@ -50,8 +50,8 @@ if [ -d ~/.ssh ]; then
 	chmod 644 ~/.ssh/config
 fi
 
-# use google style for defalt code style
-[ -f .clang-format ] || ln -s "$prof/google.clang-format" .clang-format
+# use google style for the default code style
+[ -f .clang-format ] || ln -s "$prof/google.clang-format" ~/.clang-format
 
 # install YouCompleteMe
 #cd $prof
