@@ -107,6 +107,13 @@ map <leader>q :tabe ~/buffer<CR>
 " Open history window
 map <leader>h :<C-F>
 
+" color current workd in red, green, blue, black, and cyan
+map <leader>c1 :exe 'Highlight 1 ' . expand('<cword>')<CR>
+map <leader>c2 :exe 'Highlight 2 ' . expand('<cword>')<CR>
+map <leader>c3 :exe 'Highlight 3 ' . expand('<cword>')<CR>
+map <leader>c4 :exe 'Highlight 4 ' . expand('<cword>')<CR>
+map <leader>c5 :exe 'Highlight 6 ' . expand('<cword>')<CR>
+
 " List and choose buffer window
 map <leader>b :ls<cr>:b 
 "map <leader>bs :ls<CR>:sb 
