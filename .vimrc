@@ -31,9 +31,6 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-" Enable pathogen.vim
-execute pathogen#infect()
-
 " turn backup off
 set nobackup
 set nowb
@@ -352,3 +349,6 @@ call matchadd('ColorColumn', '\%82v', 100)
 
 highlight Folded ctermbg=255
 highlight Folded ctermfg=220
+
+" Enable pathogen.vim
+execute pathogen#infect()

@@ -42,7 +42,7 @@ bindsym $Mod+Return exec i3-sensible-terminal
 bindsym $Mod+q kill
 
 # Personal configs:
-bindsym $Mod+Mod1+l exec "gnome-screensaver-command --lock"
+bindsym Mod4+Mod1+l exec "gnome-screensaver-command --lock"
 for_window [class="^google-chrome$"] border none
 
 # start dmenu (a program launcher)

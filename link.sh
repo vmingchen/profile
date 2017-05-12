@@ -1,14 +1,10 @@
-#!/bin/bash - 
-#===============================================================================
 #
 #         USAGE:  ./link.sh 
 # 
-#   DESCRIPTION:  Link
+#   DESCRIPTION:  Link all profile files
 # 
-#        AUTHOR: Ming Chen (chenming), v.mingchen@gmail.com
+#        AUTHOR: Ming Chen, v.mingchen@gmail.com
 #       CREATED: 07/20/2010 10:30:23 AM CST
-#      REVISION:  
-#               1.1, 12/05/11 11:17:34, use ls to list link files
 #===============================================================================
 
 set -o nounset                          # Treat unset variables as an error
@@ -43,6 +39,7 @@ link_files .vimrc .vim .bashrc .spacemacs .gdb .gdbinit \
 
 ln -s "$prof/.vimrc" ~/.nvimrc
 ln -s "$prof/.vim" ~/.nvim
+ln -s "$prof/i3" ~/.i3
 
 # install ssh config
 if [ -d ~/.ssh ]; then
