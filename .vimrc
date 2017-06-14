@@ -149,8 +149,22 @@ endfunction
 map <leader>tt :NERDTreeToggle<cr>
 map <leader>tf :NERDTreeFind<cr>
 
+function! ToggleSpellChecking()
+	if !exists("g:checkspelling")
+		let g:checkspelling = 0
+	endif
+
+	if g:checkspelling == 0
+		setlocal spell spelllang=en_us
+		let g:checkspelling = 1
+	else
+		setlocal spell!
+		let g:checkspelling = 0
+	endif
+endfunction
+
 " spell check
-map <leader>s :setlocal spell spelllang=en_us<cr>
+map <leader>s :call ToggleSpellChecking()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
@@ -352,10 +366,11 @@ colorscheme default
 " highlight lines longer than 80
 " From Damian Conway's "More Instantly Better Vim"
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%82v', 100)
+call matchadd('ColorColumn', '\%81v', 100)
 
 highlight Folded ctermbg=255
 highlight Folded ctermfg=220
+highlight SpellBad ctermfg=yellow
 
 " Enable pathogen.vim
 execute pathogen#infect()

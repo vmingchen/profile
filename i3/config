@@ -44,6 +44,7 @@ bindsym $Mod+q kill
 # Personal configs:
 bindsym Mod4+Mod1+l exec "gnome-screensaver-command --lock"
 for_window [class="^google-chrome$"] border none
+for_window [instance="^copyq$" class="^copyq$"] border pixel 1, floating enable
 
 # start dmenu (a program launcher)
 bindsym $Mod+d exec dmenu_run
