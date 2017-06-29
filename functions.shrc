@@ -1,8 +1,9 @@
 # Common shell functions
 
-# mkdir and cd 
-function calc() { awk "BEGIN {print $* }"; }
+# mkdir and cd
 function gcd() { mkdir -p "$@" && eval cd "\"\$$#\"";}
+
+function calc() { awk "BEGIN {print $* }"; }
 function mx() { awk 'BEGIN{getline; mx=$1;} { if($1>mx){mx=$1;} } END{ print mx; }' -; }
 function mn() { awk 'BEGIN{getline; mn=$1;} { if($1<mn){mn=$1;} } END{ print mn; }' -; }
 function sm() { awk 'BEGIN{sm=0;} {sm+=$1;} END {print sm;}' -; }
@@ -33,9 +34,9 @@ function e() {
       FT1=$(file -b --mime-type "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
       #FT1=$(file -bi "$F" | grep -Eo '[[:alnum:]_-]+/[[:alnum:]_-]+')
       #DIR="$F-e"
-	  dirnm=`dirname $F`
-	  basnm=`basename $F`
-	  DIR="${dirnm}/${basnm%%.*}"
+      dirnm=$(dirname $F)
+      basnm=$(basename $F)
+      DIR="${dirnm}/${basnm%%.*}"
       mkdir "$DIR" || exit 1
       pushd "$DIR"
       case $FT1 in

@@ -21,6 +21,7 @@
 	dc = diff --cached
 	sm = submodule
 	sms = submodule status
+	bd = branch -D
 
 [sendemail]
 	smtpencryption = tls

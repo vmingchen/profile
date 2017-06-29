@@ -167,10 +167,6 @@ export AWKPATH=$AWKPATH:~/profile/awk
 
 export PATH=/usr/local/bin:$PATH
 
-alias f1='fg 1'
-alias f2='fg 2'
-alias f3='fg 3'
-
 complete -o default -o nospace -F _man vman
 
 if [ -f ~/profile/functions.shrc ]; then

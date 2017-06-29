@@ -1,19 +1,26 @@
 alias h='history' 
-alias p='ps -ef'
-alias f='pushd'
-alias b='popd'
-alias v='dirs -v'
 alias x='exit'
 alias j='jobs'
 alias n="opennote"
 alias i="ipython"
 alias o="open"
+
+# alias for manipulating the dir stack
+alias f='pushd'
+alias b='popd'
+alias v='dirs -v'
+alias z='echo -e "`uname -n`\n`dirs -v`"'
+alias f1='fg 1'
+alias f2='fg 2'
+alias f3='fg 3'
 alias fa='pushd +1 > /dev/null; dirs -v'
 alias fb='pushd +2 > /dev/null; dirs -v'
-alias z='echo -e "`uname -n`\n`dirs -v`"'
-alias nt='netstat -vatn'
 # we do not further define fc to avoid conflict with bash builtin "fc"
-# use "f +3" instead.
+# use "f +3" and "f3" instead.
+
+# alias for display statistics
+alias p='ps -ef'
+alias nt='netstat -vatn'
 
 alias pdb='python -m pdb'
 alias tree='~/profile/tree'
@@ -23,4 +30,3 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
