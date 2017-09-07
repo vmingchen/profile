@@ -21,7 +21,10 @@
 	dc = diff --cached
 	sm = submodule
 	sms = submodule status
+	b = branch -a
 	bd = branch -D
+	r = remote -v
+	co = checkout
 
 [sendemail]
 	smtpencryption = tls

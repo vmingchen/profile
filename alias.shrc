@@ -1,3 +1,5 @@
+# :vim filetype=sh:sw=2:ts=2:et
+
 alias h='history' 
 alias x='exit'
 alias j='jobs'
@@ -9,7 +11,6 @@ alias o="open"
 alias f='pushd'
 alias b='popd'
 alias v='dirs -v'
-alias z='echo -e "`uname -n`\n`dirs -v`"'
 alias f1='fg 1'
 alias f2='fg 2'
 alias f3='fg 3'

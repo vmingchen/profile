@@ -94,4 +94,13 @@ function source_files() {
   mysource ~/profile/$(uname -n).${RC}
 }
 
+function z() {
+  echo ">>>> host: $(uname -n)"
+  echo -e ">>>> dirs:\n$(dirs -v)"
+  if [[ 'true' = $(git rev-parse --is-inside-work-tree 2>/dev/null) ]]; then
+    echo ">>>> git branches:"
+    git branch -a
+  fi
+}
+
 # :vim filetype=sh:sw=2:ts=2:et
