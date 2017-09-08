@@ -18,6 +18,7 @@ Plugin 'google/vim-codefmt'
 " Also add Glaive, which is used to configure codefmt's maktaba flags. See
 " `:help :Glaive` for usage.
 Plugin 'google/vim-glaive'
+Plugin 'SirVer/ultisnips'
 " ...
 call vundle#end()
 " the glaive#Install() should go after the "call vundle#end()"
@@ -374,3 +375,7 @@ highlight SpellBad ctermfg=yellow
 
 " Enable pathogen.vim
 execute pathogen#infect()
+
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-J>"

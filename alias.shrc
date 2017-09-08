@@ -1,11 +1,22 @@
 # :vim filetype=sh:sw=2:ts=2:et
 
-alias h='history' 
+alias h='history'
 alias x='exit'
 alias j='jobs'
 alias n="opennote"
 alias i="ipython"
 alias o="open"
+
+# alias
+alias grep="grep $COLOR"
+alias nau='nautilus'
+alias l='ls -hl --color=auto'         # show detailed info
+alias ls='ls -hl --color=auto'        # show detailed info
+alias la='\ls -Al --color=auto'       # show hidden files
+alias lt='\ls -ltc --color=auto'      # sort by change time
+alias lx='\ls -lXB --color=auto'      # sort by extension
+alias lr='\ls -lR --color=auto'       # recursive ls
+alias lS='\ls -lhS --color=auto'      # sort by size
 
 # alias for manipulating the dir stack
 alias f='pushd'
@@ -16,6 +27,7 @@ alias f2='fg 2'
 alias f3='fg 3'
 alias fa='pushd +1 > /dev/null; dirs -v'
 alias fb='pushd +2 > /dev/null; dirs -v'
+alias fff='pushd ~/profile'
 # we do not further define fc to avoid conflict with bash builtin "fc"
 # use "f +3" and "f3" instead.
 
