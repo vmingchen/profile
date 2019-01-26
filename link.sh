@@ -51,7 +51,9 @@ fi
 [ -f .clang-format ] || ln -s "$prof/google.clang-format" ~/.clang-format
 
 # install YouCompleteMe
-#cd $prof
-#git submodule update --init --recursive
+cd $prof
+git submodule update --init --recursive
 #cd .vim/bundle/YouCompleteMe
 #./install.sh
+
+echo "run `:PluginInstall` in vim to install vim plugins"
