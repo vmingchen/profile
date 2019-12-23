@@ -136,15 +136,7 @@ map <leader>c :Tlist<cr>
 autocmd QuickFixCmdPost *grep* cwindow
 
 " search using grep and show results in Quickfix
-"map <leader>g :grep -R --include=\*.{py,c,h,cc,cpp,sh} "<cword>" .<Left><Left><Left>
-function Mygrep(word)
-	let l:keyword = a:word
-	if empty(l:keyword) == 1
-		let l:keyword = expand("<cword>")
-	endif
-	echom 'grep -R --include=\*.{py,c,h,cc,cpp,sh} "' . l:keyword . '" .'
-	execute('grep -R --include=\*.{py,c,h,cc,cpp,sh} "' . l:keyword . '" .')
-endfunction
+map <leader>g :vimgrep <cword> **/*.tex **/*.c **/*.cc **/*.h **/*.py<CR>
 
 " open NERDTree window
 map <leader>tt :NERDTreeToggle<cr>
@@ -379,3 +371,9 @@ execute pathogen#infect()
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-J>"
+
+" vimwiki
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'go': 'go', 'java': 'java'}
+let g:vimwiki_list = [wiki]
