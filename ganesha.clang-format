@@ -32,8 +32,10 @@ Cpp11BracedListStyle: true
 Standard:        Auto
 IndentWidth:     8
 TabWidth:        8
-UseTab:          Never
-BreakBeforeBraces: Attach
+UseTab:          Always
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
 IndentFunctionDeclarationAfterType: true
 SpacesInParentheses: false
 SpacesInAngles:  false
