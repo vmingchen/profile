@@ -39,6 +39,7 @@ link_files .vimrc .vim .bash_profile .bashrc .spacemacs .gdb .gdbinit \
 
 ln -s "$prof/.vimrc" ~/.nvimrc
 ln -s "$prof/.vim" ~/.nvim
+ln -s "$prof/.vim" ~/.vim
 ln -s "$prof/i3" ~/.i3
 
 # install ssh config
