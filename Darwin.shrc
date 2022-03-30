@@ -5,8 +5,6 @@
 # get full path of a file
 alias y='myshowpath'
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-
 # ignore .DS_Store file
 export FIGNORE=DS_Store
 
