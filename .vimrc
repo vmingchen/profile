@@ -2,30 +2,6 @@
 set nocompatible
 filetype off
 
-" Vundle: https://github.com/gmarik/Vundle.vim
-" set the runtime path to include Vundle and initialize
-" run ":PluginInstall" to install plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-" Plugin 'gmarik/Vundle.vim'
-" Plugin 'floobits/floobits-neovim'
-
-" Add maktaba and codefmt to the runtimepath.
-" (The latter must be installed before it can be used.)
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-codefmt'
-" Also add Glaive, which is used to configure codefmt's maktaba flags. See
-" `:help :Glaive` for usage.
-Plugin 'google/vim-glaive'
-Plugin 'SirVer/ultisnips'
-" ...
-call vundle#end()
-" the glaive#Install() should go after the "call vundle#end()"
-call glaive#Install()
-" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
-"Glaive codefmt plugin[mappings]
-
 " enable plugins
 syntax on
 filetype on
@@ -46,7 +22,7 @@ map <M-Left> :tabprev<CR>
 " set GUI
 set guioptions-=T
 set laststatus=2
-set statusline=%F%m%r%h%w\ [%n]\ %{fugitive#statusline()}%=\ [%b=%B]\ [%l,%v][%p%%] 
+set statusline=%F%m%r%h%w\ [%n]\ [%b=%B]\ [%l,%v][%p%%] 
 " Maximize the window
 " au GUIEnter * simalt ~x
 
@@ -364,9 +340,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 highlight Folded ctermbg=255
 highlight Folded ctermfg=220
 highlight SpellBad ctermfg=yellow
-
-" Enable pathogen.vim
-execute pathogen#infect()
 
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"

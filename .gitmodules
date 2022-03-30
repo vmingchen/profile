@@ -1,39 +1,6 @@
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/pyflake8"]
-	path = .vim/bundle/pyflake8
-	url = https://github.com/nvie/vim-flake8.git
-[submodule ".vim/bundle/thrift"]
-	path = .vim/bundle/thrift
-	url = https://github.com/solarnz/thrift.vim.git
-[submodule ".vim/bundle/vim-superman"]
-	path = .vim/bundle/vim-superman
-	url = https://github.com/jez/vim-superman
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule ".vim/bundle/vim-signature"]
-	path = .vim/bundle/vim-signature
-	url = https://github.com/kshenoy/vim-signature.git
-[submodule "ale-vim-syntax-checker"]
-	path = .vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
