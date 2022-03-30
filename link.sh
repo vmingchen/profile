@@ -42,19 +42,7 @@ ln -s "$prof/.vim" ~/.nvim
 ln -s "$prof/.vim" ~/.vim
 ln -s "$prof/i3" ~/.i3
 
-# install ssh config
-if [ -d ~/.ssh ]; then
-	cp ssh-config ~/.ssh/config
-	chmod 644 ~/.ssh/config
-fi
-
 # use google style for the default code style
-[ -f .clang-format ] || ln -s "$prof/google.clang-format" ~/.clang-format
+# [ -f .clang-format ] || ln -s "$prof/google.clang-format" ~/.clang-format
 
-# install YouCompleteMe
-cd $prof
-git submodule update --init --recursive
-#cd .vim/bundle/YouCompleteMe
-#./install.sh
-
-echo "run `:PluginInstall` in vim to install vim plugins"
+echo "run ':PluginInstall' in vim to install vim plugins"

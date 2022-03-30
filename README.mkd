@@ -31,7 +31,7 @@ as described at http://clang.llvm.org/docs/ClangFormat.html
 # Install
 
     $ cd ~
-    $ git clone git://github.com/brianchenming/profile.git
+    $ git clone git://github.com/vmingchen/profile.git
     $ cd profile
     $ ./link.sh
 
