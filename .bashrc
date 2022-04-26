@@ -40,13 +40,7 @@ if [ -n "${force_color_prompt:=}" ]; then
   fi
 fi
 
-if [ "${color_prompt:=}" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
 unset color_prompt force_color_prompt
-PS1='\$'
 
 # If this is an xterm set the title to user@host:dir
 case "${TERM:=}" in
@@ -159,3 +153,10 @@ if [ -f ~/profile/functions.shrc ]; then
   source ~/profile/functions.shrc
   source_files
 fi
+. "$HOME/.cargo/env"
+
+source /usr/share/bash-completion/completions/git
+source ~/profile/git-prompt.sh
+PS1='$(__git_ps1 "(%s)")\$ '
+
+export GLOMMIO_TEST_POLLIO_ROOTDIR=/mnt/vhd/
