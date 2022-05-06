@@ -45,4 +45,4 @@ ln -s "$prof/i3" ~/.i3
 # use google style for the default code style
 # [ -f .clang-format ] || ln -s "$prof/google.clang-format" ~/.clang-format
 
-echo "run ':PluginInstall' in vim to install vim plugins"
+# echo "run ':PluginInstall' in vim to install vim plugins"

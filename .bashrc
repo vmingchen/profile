@@ -153,7 +153,9 @@ if [ -f ~/profile/functions.shrc ]; then
   source ~/profile/functions.shrc
   source_files
 fi
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 source /usr/share/bash-completion/completions/git
 source ~/profile/git-prompt.sh
